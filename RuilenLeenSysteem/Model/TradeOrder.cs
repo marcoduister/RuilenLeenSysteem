@@ -9,8 +9,8 @@ namespace RuilenLeenSysteem.Model
     class TradeOrder
     {
         protected int  Id { get; }
-        
-        private int Total_points { 
+
+        public int Total_points { 
             get 
             {
                 int points = 0;
@@ -22,9 +22,9 @@ namespace RuilenLeenSysteem.Model
             } 
         }
 
-        private List<TradeProduct> AllTradeProducts = new List<TradeProduct>();
+        public List<TradeProduct> AllTradeProducts = new List<TradeProduct>();
 
-        private  int Customer_id { get;  }
-        private Customer _Customer { get; set; }
+        public int Customer_id { get;  }
+        public Customer _Customer { get; set; }
     }
 }

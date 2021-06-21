@@ -9,7 +9,7 @@ namespace RuilenLeenSysteem.Model
     class BorrowOrder
     {
         protected int Id { get; }
-        private int Total_points
+        public int Total_points
         {
             get
             {
@@ -22,9 +22,9 @@ namespace RuilenLeenSysteem.Model
             }
         }
 
-        private List<BorrowProduct> AllBorrowProducts = new List<BorrowProduct>();
+        public List<BorrowProduct> AllBorrowProducts = new List<BorrowProduct>();
 
-        private int Customer_id { get; }
-        private Customer _Customer { get; set; }
+        public int Customer_id { get; }
+        public Customer _Customer { get; set; }
     }
 }

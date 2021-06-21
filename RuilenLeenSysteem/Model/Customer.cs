@@ -14,9 +14,9 @@ namespace RuilenLeenSysteem.Model
         public string _Achternaam { get; set; }
         public string _Adress { get; set; }
         public string _Email { get; set; }
-        protected string TelefoonNummer { get; }
+        public string TelefoonNummer { get; }
 
-        private List<TradeOrder> AllTradeOrders = new List<TradeOrder>();
-        private List<BorrowOrder> AllBorrowOrders = new List<BorrowOrder>();
+        public List<TradeOrder> AllTradeOrders = new List<TradeOrder>();
+        public List<BorrowOrder> AllBorrowOrders = new List<BorrowOrder>();
     }
 }

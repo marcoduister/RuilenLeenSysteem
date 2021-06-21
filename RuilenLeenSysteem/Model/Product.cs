@@ -9,18 +9,18 @@ namespace RuilenLeenSysteem.Model
     class Product
     {
         protected int Id { get; set; }
-        private string Name { get; set; }
+        public string Name { get; set; }
         public int Points { get; set; }
-        private string Description { get; set; }
-        private byte Image  {get; set; }
-        private int balance { get; set; }
+        public string Description { get; set; }
+        public byte Image  {get; set; }
+        public int balance { get; set; }
 
-        private int Maker_id { get; set; }
-        private User User { get; set; }
+        public int Maker_id { get; set; }
+        public User User { get; set; }
 
 
-        private int Categorie_id { get; set; }
-        private Categorie Categorie  {get; set; }
+        public int Categorie_id { get; set; }
+        public Categorie Categorie  {get; set; }
 
     }
 }

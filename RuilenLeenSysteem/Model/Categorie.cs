@@ -9,10 +9,10 @@ namespace RuilenLeenSysteem.Model
     class Categorie
     {
         protected int Id { get; }
-        private string  Name { get; set; }
-        private string Description { get; set; }
+        public string  Name { get; set; }
+        public string Description { get; set; }
 
-        private List<Product> AllProducts = new List<Product>();
+        public List<Product> AllProducts = new List<Product>();
 
     }
 }
