@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RuilenLeenSysteem.Model;
 
 namespace RuilenLeenSysteem.View
 {
@@ -20,19 +21,17 @@ namespace RuilenLeenSysteem.View
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            Gebruiker Login_user = new Gebruiker("", "", Textbox_email.Text, Textbox_password.Text);
-            if (Login_user.LogIn())
-            {
-                MainForm MainForm = new MainForm();
-                this.Hide();
-                MainForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("please check credentials");
-            }
-
-
+            //User Login_user = new User("", "", Textbox_email.Text, Textbox_password.Text);
+            //if (Login_user.LogIn())
+            //{
+            //    MainForm MainForm = new MainForm();
+            //    this.Hide();
+            //    MainForm.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("please check credentials");
+            //}
         }
     }
 }

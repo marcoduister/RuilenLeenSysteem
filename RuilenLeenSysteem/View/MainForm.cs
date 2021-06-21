@@ -1,4 +1,5 @@
 ﻿using RuilenLeenSysteem.BUS;
+using RuilenLeenSysteem.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace RuilenLeenSysteem.View
 {
     public partial class MainForm : Form
     {
-        private Gebruiker CurrentUser;
+        private User CurrentUser;
         public MainForm()
         {
             InitializeComponent();

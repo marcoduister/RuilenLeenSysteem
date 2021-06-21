@@ -10,8 +10,8 @@ namespace RuilenLeenSysteem.Model
     class User
     {
         public int _Id { get; }
-        public string _Voornaam { get; set; }
-        public string _Achternaam { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string _Email { get; set; }
         protected string _password { get; }
     }

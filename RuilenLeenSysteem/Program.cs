@@ -1,4 +1,5 @@
 ﻿using RuilenLeenSysteem.BUS;
+using RuilenLeenSysteem.DAL;
 using RuilenLeenSysteem.View;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ namespace RuilenLeenSysteem
         [STAThread]
         static void Main()
         {
+            DataAcces haha = new DataAcces();
+            haha.test();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new login());
