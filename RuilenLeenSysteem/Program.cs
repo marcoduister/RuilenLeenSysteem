@@ -17,8 +17,8 @@ namespace RuilenLeenSysteem
         [STAThread]
         static void Main()
         {
-            DataAcces haha = new DataAcces();
-            haha.test();
+            //DataAcces haha = new DataAcces();
+            //haha.GetAllUsers();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

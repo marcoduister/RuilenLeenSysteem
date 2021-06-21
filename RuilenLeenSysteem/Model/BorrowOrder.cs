@@ -25,6 +25,6 @@ namespace RuilenLeenSysteem.Model
         public List<BorrowProduct> AllBorrowProducts = new List<BorrowProduct>();
 
         public int Customer_id { get; }
-        public Customer _Customer { get; set; }
+        public Customer Customer { get; set; }
     }
 }

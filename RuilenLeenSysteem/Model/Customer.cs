@@ -9,12 +9,12 @@ namespace RuilenLeenSysteem.Model
 {
     class Customer
     {
-        public int _Id { get; }
-        public string _Voornaam { get; set; }
-        public string _Achternaam { get; set; }
-        public string _Adress { get; set; }
-        public string _Email { get; set; }
-        public string TelefoonNummer { get; }
+        public int Id { get; }
+        public string FirsName { get; set; }
+        public string LastName { get; set; }
+        public string Adress { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; }
 
         public List<TradeOrder> AllTradeOrders = new List<TradeOrder>();
         public List<BorrowOrder> AllBorrowOrders = new List<BorrowOrder>();

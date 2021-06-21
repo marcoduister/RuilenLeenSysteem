@@ -12,7 +12,7 @@ namespace RuilenLeenSysteem.DAL
     class DataAcces
     {
         private string ConnectionString = "Data Source=.;Initial Catalog=RuilWinkelVaals.DEV; Integrated Security=SSPI;";
-        private SqlConnection _conn;
+        private SqlConnection _Conn;
 
         /// <summary>
         /// Constructor
@@ -28,45 +28,35 @@ namespace RuilenLeenSysteem.DAL
         /// </summary>
         public void InitializeDatabase()
         {
-            _conn = new SqlConnection(ConnectionString);
+            _Conn = new SqlConnection(ConnectionString);
         }
 
-        public void test()
+        public void GetAllUsers()
         {
-            try
-            {
-                _conn.Open();
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
 
             List<User> ListOfUsers = new List<User>();
-            using (SqlConnection myConnection = new SqlConnection(ConnectionString))
+            using (_Conn)
             {
-                string oString = "SELECT * FROM [User]";
-                SqlCommand oCmd = new SqlCommand(oString, myConnection);
-                myConnection.Open();
-                using (SqlDataReader oReader = oCmd.ExecuteReader())
+
+                SqlCommand SQLCmd = new SqlCommand("SELECT * FROM [User]", _Conn);
+                _Conn.Open();
+                using (SqlDataReader oReader = SQLCmd.ExecuteReader())
                 {
                     while (oReader.Read())
                     {
                         User TempUser = new User()
                         {
-                            _Voornaam = oReader["FirstName"].ToString(),
-                            _Achternaam = oReader["LastName"].ToString(),
-                            _Email = oReader["Email"].ToString()
+                            Id = Int16.Parse(oReader["Id"].ToString()),
+                            FirstName = oReader["FirstName"].ToString(),
+                            LastName = oReader["LastName"].ToString(),
+                            Email = oReader["Email"].ToString(),
+                            Password = oReader["Password"].ToString()
                         };
                         ListOfUsers.Add(TempUser);
                     }
-
-                    myConnection.Close();
+                    _Conn.Close();
                 }
             }
-            string hahahahahah = "";
         }
-
     }
 }
