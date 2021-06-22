@@ -14,24 +14,25 @@ namespace RuilenLeenSysteem.View
 {
     public partial class login : Form
     {
+        private UserController _UserController;
         public login()
         {
             InitializeComponent();
+            _UserController = new UserController();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            //User Login_user = new User("", "", Textbox_email.Text, Textbox_password.Text);
-            //if (Login_user.LogIn())
-            //{
-            //    MainForm MainForm = new MainForm();
-            //    this.Hide();
-            //    MainForm.ShowDialog();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("please check credentials");
-            //}
+            if (_UserController.LogIn(Textbox_email.Text, Textbox_password.Text))
+            {
+                MainForm MainForm = new MainForm();
+                this.Hide();
+                MainForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("please check credentials");
+            }
         }
     }
 }
