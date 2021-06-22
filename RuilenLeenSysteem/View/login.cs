@@ -25,13 +25,17 @@ namespace RuilenLeenSysteem.View
         {
             if (_UserController.LogIn(Textbox_email.Text, Textbox_password.Text))
             {
-                MainForm MainForm = new MainForm();
                 this.Hide();
+                MainForm MainForm = new MainForm();
                 MainForm.ShowDialog();
+                MainForm.Dispose();
+                this.Show();
+                this.Textbox_email.Text = "";
+                this.Textbox_password.Text = "";
             }
             else
             {
-                MessageBox.Show("please check credentials");
+                MessageBox.Show("U hebt mogelijk foute inlog gegevens gebruik!!");
             }
         }
     }
