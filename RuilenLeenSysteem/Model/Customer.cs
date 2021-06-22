@@ -13,6 +13,7 @@ namespace RuilenLeenSysteem.Model
         public string FirsName { get; set; }
         public string LastName { get; set; }
         public string Adress { get; set; }
+        public int balance { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; }
 
