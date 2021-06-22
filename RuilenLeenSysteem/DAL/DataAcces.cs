@@ -80,6 +80,7 @@ namespace RuilenLeenSysteem.DAL
                         ListOfUsers.Add(TempUser);
                     }
                     _Conn.Close();
+                    Console.WriteLine("hallo");
                 }
             }
         }
