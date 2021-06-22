@@ -74,6 +74,12 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Customers\CustomerOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Customers\CustomerOverview.Designer.cs">
+      <DependentUpon>CustomerOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Home\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Customers\CustomerOverview.resx">
+      <DependentUpon>CustomerOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,7 +121,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\UserControls\Customers\" />
     <Folder Include="View\UserControls\Gategories\" />
     <Folder Include="View\UserControls\Products\" />
   </ItemGroup>
