@@ -218,7 +218,7 @@ namespace RuilenLeenSysteem.DAL
                         product.Id = Int32.Parse(oReader["Id"].ToString());
                         product.Name = oReader["Name"].ToString();
                         product.Description = oReader["Desctiption"].ToString();
-                        product.Worth = Int32.Parse(oReader["worth"].ToString());
+                        product.Worth = Int32.Parse(oReader["Worth"].ToString());
                         product.Status = Int32.Parse(oReader["Status"].ToString());
                         product.Type = Int32.Parse(oReader["Type"].ToString());
                         product.Categorie_Id = Int32.Parse(oReader["Categorie_Id"].ToString());
@@ -242,6 +242,50 @@ namespace RuilenLeenSysteem.DAL
                 {
                     SQLCmd.ExecuteNonQuery();
                     MessageBox.Show("delete successful");
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                _Conn.Close();
+            }
+        }
+
+        public void AddProduct(Product product)
+        {
+            using (_Conn)
+            {
+                // Idk of deze query et doet        #TODO
+                SqlCommand SQLCmd = new SqlCommand($"Insert Into Product values ({product.Name}, {product.Description}, {product.Worth}, {product.Status}, {product.Type}, {product.Categorie_Id}, {product.Customer_Id}, {product.Maker_Id})", _Conn);
+                _Conn.Open();
+                    
+                try
+                {
+                    SQLCmd.ExecuteNonQuery();
+                    MessageBox.Show("Add successful");
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                _Conn.Close();
+            }
+        }
+
+        public void EdidtProduct(Product product)
+        {
+            using (_Conn)
+            {
+                // Idk of deze query et doet        #TODO
+                SqlCommand SQLCmd = new SqlCommand($"Update Product set ({product.Id}, {product.Name}, {product.Description}, {product.Worth}, {product.Status}, {product.Type}, {product.Categorie_Id}, {product.Customer_Id}, {product.Maker_Id})", _Conn);
+                _Conn.Open();
+
+                try
+                {
+                    SQLCmd.ExecuteNonQuery();
+                    MessageBox.Show("Update successful");
                 }
                 catch (SqlException ex)
                 {
