@@ -31,6 +31,13 @@ namespace RuilenLeenSysteem.DAL
             _Conn = new SqlConnection(ConnectionString);
         }
 
+
+        /*
+         * User
+         * 
+         * All functions for data handling for the user are below
+         */
+
         public bool VerifyAccount(string Email,String Password)
         {
             bool ValidUser = false;
@@ -83,5 +90,30 @@ namespace RuilenLeenSysteem.DAL
                 }
             }
         }
+
+
+        /*
+         * Customer
+         * 
+         * All functions for data handling for the customer are below
+         */
+
+        /*
+         * Order
+         * 
+         * All functions for data handling for the order are below
+         */
+
+        /*
+         * Product
+         * 
+         * All functions for data handling for the product are below
+         */
+
+        /*
+         * Category
+         * 
+         * All functions for data handling for the category are below
+         */
     }
 }
