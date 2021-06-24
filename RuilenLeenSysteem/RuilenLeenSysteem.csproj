@@ -57,13 +57,12 @@
     <Compile Include="DAL\ProductData.cs" />
     <Compile Include="DAL\UserData.cs" />
     <Compile Include="Model\BorrowOrder.cs" />
-    <Compile Include="Model\BorrowProduct.cs" />
     <Compile Include="Model\Categorie.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\TradeOrder.cs" />
-    <Compile Include="Model\TradeProduct.cs" />
     <Compile Include="DAL\DataAcces.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
