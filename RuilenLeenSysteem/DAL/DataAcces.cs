@@ -20,16 +20,9 @@ namespace RuilenLeenSysteem.DAL
         /// </summary>
         public DataAcces()
         {
-            InitializeDatabase();
-  
-        }
-
-        /// <summary>
-        /// Initialize the connection to the database
-        /// </summary>
-        public void InitializeDatabase()
-        {
+           
             _Conn = new SqlConnection(ConnectionString);
+
         }
     }
 }
