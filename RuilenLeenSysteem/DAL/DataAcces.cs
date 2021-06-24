@@ -105,13 +105,58 @@ namespace RuilenLeenSysteem.DAL
          * All functions for data handling for the order are below
          */
 
+        public void GetAllOrders()
+        {
+
+        }
+
+        public void GetAllTradeOrders()
+        {
+
+        }
+
+        public void GetAllBorrowOrders()
+        {
+
+        }
+
+        public void GetOrderById()
+        {
+
+        }
+
+        public void DeleteOrder()
+        {
+
+        }
+
+        public void AddTradeOrder()
+        {
+
+        }
+
+        public void AddBorrowOrder()
+        {
+
+        }
+
+        public void EditTradeOrders()
+        {
+
+        }
+
+        public void EditBorrowOrders()
+        {
+
+        }
+
         /*
          * Product
          * 
          * All functions for data handling for the product are below
          */
 
-        public List<Product> GetAllProducts()
+        public List<Product> GetAllProducts() 
         {
             List<Product> ListOfProducts = new List<Product>();
             using (_Conn)
@@ -297,9 +342,34 @@ namespace RuilenLeenSysteem.DAL
         }
 
         /*
-         * Category
+         * Categorie
          * 
-         * All functions for data handling for the category are below
+         * All functions for data handling for the categorie are below
          */
+
+        public void GetAllCategories()
+        {
+
+        }
+
+        public void GetCategorieById()
+        {
+
+        }
+
+        public void DeleteCategories()
+        {
+
+        }
+
+        public void AddCategories()
+        {
+
+        }
+
+        public void EditCategories()
+        {
+
+        }
     }
 }
