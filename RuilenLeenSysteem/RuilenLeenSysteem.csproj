@@ -51,6 +51,11 @@
     <Compile Include="BUS\OrderController.cs" />
     <Compile Include="BUS\ProductController.cs" />
     <Compile Include="BUS\UserController.cs" />
+    <Compile Include="DAL\CategorieData.cs" />
+    <Compile Include="DAL\CustomerData.cs" />
+    <Compile Include="DAL\OrderData.cs" />
+    <Compile Include="DAL\ProductData.cs" />
+    <Compile Include="DAL\UserData.cs" />
     <Compile Include="Model\BorrowOrder.cs" />
     <Compile Include="Model\Categorie.cs" />
     <Compile Include="Model\Customer.cs" />
