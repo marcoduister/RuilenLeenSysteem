@@ -8,21 +8,14 @@ namespace RuilenLeenSysteem.Model
 {
     class TradeOrder
     {
+        // Property / Attributes
         protected int  Id { get; }
 
-        public int Total_points { 
-            get 
-            {
-                int points = 0;
-                foreach (var product in AllTradeProducts)
-                {
-                    points += product.Points;
-                }
-                return points;
-            } 
-        }
+        public DateTime Order_Date { get; set; }
 
-        public List<TradeProduct> AllTradeProducts = new List<TradeProduct>();
+        // Relationships
+        public int Prdouct_id { get; set; }
+        public Product Product = new Product();
 
         public int Customer_id { get;  }
         public Customer Customer { get; set; }
