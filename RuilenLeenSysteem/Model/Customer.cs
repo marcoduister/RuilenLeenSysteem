@@ -18,6 +18,7 @@ namespace RuilenLeenSysteem.Model
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public DateTime Created_date { get; set; }
+        public Boolean BlackList { get; set; }
 
         // Relationships
         public List<TradeOrder> AllTradeOrders = new List<TradeOrder>();

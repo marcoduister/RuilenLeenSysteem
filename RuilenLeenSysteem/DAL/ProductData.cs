@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Type = RuilenLeenSysteem.Model.Type;
 
 namespace RuilenLeenSysteem.DAL
 {
@@ -34,12 +35,11 @@ namespace RuilenLeenSysteem.DAL
                             Id = Int32.Parse(oReader["Id"].ToString()),
                             Name = oReader["Name"].ToString(),
                             Description = oReader["Desctiption"].ToString(),
-                            Worth = Int32.Parse(oReader["worth"].ToString()),
-                            Status = Int32.Parse(oReader["Status"].ToString()),
-                            Type = Int32.Parse(oReader["Type"].ToString()),
-                            Categorie_Id = Int32.Parse(oReader["Categorie_Id"].ToString()),
+                            Points = Int32.Parse(oReader["p"].ToString()),
+                            Status = (Status)Int32.Parse(oReader["Status"].ToString()),
+                            Type = (Type)Int32.Parse(oReader["Type"].ToString()),
+                            Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString()),
                             Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString()),
-                            Maker_Id = Int32.Parse(oReader["Maker_Id"].ToString()),
                         };
                         ListOfProducts.Add(TempProduct);
                     }
@@ -65,12 +65,11 @@ namespace RuilenLeenSysteem.DAL
                             Id = Int32.Parse(oReader["Id"].ToString()),
                             Name = oReader["Name"].ToString(),
                             Description = oReader["Desctiption"].ToString(),
-                            Worth = Int32.Parse(oReader["worth"].ToString()),
-                            Status = Int32.Parse(oReader["Status"].ToString()),
-                            Type = Int32.Parse(oReader["Type"].ToString()),
-                            Categorie_Id = Int32.Parse(oReader["Categorie_Id"].ToString()),
+                            Points = Int32.Parse(oReader["worth"].ToString()),
+                            Status = (Status)Int32.Parse(oReader["Status"].ToString()),
+                            Type = (Type)Int32.Parse(oReader["Type"].ToString()),
+                            Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString()),
                             Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString()),
-                            Maker_Id = Int32.Parse(oReader["Maker_Id"].ToString()),
                         };
                         ListOfTradeProducts.Add(TempTradeProduct);
                     }
@@ -96,12 +95,11 @@ namespace RuilenLeenSysteem.DAL
                             Id = Int32.Parse(oReader["Id"].ToString()),
                             Name = oReader["Name"].ToString(),
                             Description = oReader["Desctiption"].ToString(),
-                            Worth = Int32.Parse(oReader["worth"].ToString()),
-                            Status = Int32.Parse(oReader["Status"].ToString()),
-                            Type = Int32.Parse(oReader["Type"].ToString()),
-                            Categorie_Id = Int32.Parse(oReader["Categorie_Id"].ToString()),
+                            Points = Int32.Parse(oReader["worth"].ToString()),
+                            Status = (Status)Int32.Parse(oReader["Status"].ToString()),
+                            Type = (Type)Int32.Parse(oReader["Type"].ToString()),
+                            Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString()),
                             Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString()),
-                            Maker_Id = Int32.Parse(oReader["Maker_Id"].ToString()),
                         };
                         ListOfBorrowProducts.Add(TempBorrowProduct);
                     }
@@ -125,12 +123,11 @@ namespace RuilenLeenSysteem.DAL
                         product.Id = Int32.Parse(oReader["Id"].ToString());
                         product.Name = oReader["Name"].ToString();
                         product.Description = oReader["Desctiption"].ToString();
-                        product.Worth = Int32.Parse(oReader["Worth"].ToString());
-                        product.Status = Int32.Parse(oReader["Status"].ToString());
-                        product.Type = Int32.Parse(oReader["Type"].ToString());
-                        product.Categorie_Id = Int32.Parse(oReader["Categorie_Id"].ToString());
+                        product.Points = Int32.Parse(oReader["Worth"].ToString());
+                        product.Status = (Status)Int32.Parse(oReader["Status"].ToString());
+                        product.Type = (Type)Int32.Parse(oReader["Type"].ToString());
+                        product.Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString());
                         product.Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString());
-                        product.Maker_Id = Int32.Parse(oReader["Maker_Id"].ToString());
                     }
                     _Conn.Close();
                 }
@@ -164,7 +161,7 @@ namespace RuilenLeenSysteem.DAL
             using (_Conn)
             {
                 // Idk of deze query et doet        #TODO
-                SqlCommand SQLCmd = new SqlCommand($"Insert Into Product values ({product.Name}, {product.Description}, {product.Worth}, {product.Status}, {product.Type}, {product.Categorie_Id}, {product.Customer_Id}, {product.Maker_Id})", _Conn);
+                SqlCommand SQLCmd = new SqlCommand($"Insert Into Product values ({product.Name}, {product.Description}, {product.Points}, {product.Status}, {product.Type}, {product.Categorie_id}, {product.Customer_Id})", _Conn);
                 _Conn.Open();
 
                 try
@@ -186,7 +183,7 @@ namespace RuilenLeenSysteem.DAL
             using (_Conn)
             {
                 // Idk of deze query et doet        #TODO
-                SqlCommand SQLCmd = new SqlCommand($"Update Product set ({product.Id}, {product.Name}, {product.Description}, {product.Worth}, {product.Status}, {product.Type}, {product.Categorie_Id}, {product.Customer_Id}, {product.Maker_Id})", _Conn);
+                SqlCommand SQLCmd = new SqlCommand($"Update Product set ({product.Id}, {product.Name}, {product.Description}, {product.Points}, {product.Status}, {product.Type}, {product.Categorie_id}, {product.Customer_Id})", _Conn);
                 _Conn.Open();
 
                 try

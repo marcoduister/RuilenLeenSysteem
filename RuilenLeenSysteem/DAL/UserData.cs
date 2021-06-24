@@ -59,9 +59,7 @@ namespace RuilenLeenSysteem.DAL
                         User TempUser = new User()
                         {
                             Id = Int16.Parse(oReader["Id"].ToString()),
-                            FirstName = oReader["FirstName"].ToString(),
-                            LastName = oReader["LastName"].ToString(),
-                            Email = oReader["Email"].ToString(),
+                            UserName = oReader["Email"].ToString(),
                             Password = oReader["Password"].ToString()
                         };
                         ListOfUsers.Add(TempUser);
