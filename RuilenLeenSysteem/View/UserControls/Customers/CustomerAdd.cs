@@ -20,15 +20,9 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             _CustomerControlle = new CustomerController();
         }
 
-        private void Txt_CustomerLastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_CustomerAdd_Click(object sender, EventArgs e)
         {
-            
-            if (_CustomerControlle.AddCustomer(Txt_CustomerFirstName.Text,Txt_CustomerLastName.Text, Txt_CustomerAdress.Text, Txt_CustomerEmail.Text, Txt_CustomerPhoneNumber.Text))
+            if (_CustomerControlle.AddCustomer(Txt_CustomerFirstName.Text,Txt_CustomerLastName.Text, Txt_CustomerAdress.Text, Txt_CustomerEmail.Text, int.Parse(Txt_CustomerPhoneNumber.Text)))
             {
                 MessageBox.Show("Uw heeft zo juist een Klant aangemaakt");
                 Btn_Cancel_Click(null, null);

@@ -17,12 +17,14 @@ namespace RuilenLeenSysteem.DAL
          * 
          * All functions for data handling for the customer are below
          */
+
         internal List<Customer> GetAllCustomers()
         {
             List<Customer> ListOfCustomers = new List<Customer>();
+            _Conn = new SqlConnection(ConnectionString);
             using (_Conn)
             {
-                SqlCommand SQLCmd = new SqlCommand($"SELECT * FROM Customer", _Conn);
+                SqlCommand SQLCmd = new SqlCommand($"SELECT * FROM Customer",_Conn);
                 _Conn.Open();
                 using (SqlDataReader oReader = SQLCmd.ExecuteReader())
                 {
@@ -51,19 +53,23 @@ namespace RuilenLeenSysteem.DAL
         internal bool ExistCustomerByEmail(string email)
         {
             bool ValidUser = false;
+            _Conn = new SqlConnection(ConnectionString);
             try
             {
-                SqlCommand SQLCmd = new SqlCommand($"Select * From [Customer] where Email= '{email}' COLLATE SQL_Latin1_General_CP1_CS_AS", _Conn);
-                _Conn.Open();
-                using (SqlDataReader oReader = SQLCmd.ExecuteReader())
+                using (_Conn)
                 {
-                    if (oReader.HasRows)
+                    SqlCommand SQLCmd = new SqlCommand($"Select * From [Customer] where Email= '{email}' COLLATE SQL_Latin1_General_CP1_CS_AS",_Conn);
+                    _Conn.Open();
+                    using (SqlDataReader oReader = SQLCmd.ExecuteReader())
                     {
-                        ValidUser = true;
-                    }
-                    else
-                    {
-                        ValidUser = false;
+                        if (oReader.HasRows)
+                        {
+                            ValidUser = true;
+                        }
+                        else
+                        {
+                            ValidUser = false;
+                        }
                     }
                 }
             }
@@ -72,68 +78,31 @@ namespace RuilenLeenSysteem.DAL
             return ValidUser;
         }
 
-        //internal Customer GetCustomerById(int Id)
-        //{
-        //    Customer Customer = new Customer();
-        //    using (_Conn)
-        //    {
-        //        SqlCommand SQLCmd = new SqlCommand($"FROM Customer M" +
-        //            $"LEFT JOIN TradeOrder T ON M.Id = T.Id" +
-        //            $"LEFT JOIN BorrowOrder B ON M.Id = B.Id" +
-        //            $"WHERE M.Id = {Id}", _Conn);
-        //        _Conn.Open();
-        //        using (SqlDataReader oReader = SQLCmd.ExecuteReader())
-        //        {
-        //            while (oReader.Read())
-        //            {
-        //                Customer TempCustomer = new Customer()
-        //                {
-        //                    Id = int.Parse(oReader["Id"].ToString()),
-        //                    FirstName = oReader["FirstName"].ToString(),
-        //                    LastName = oReader["LastName"].ToString(),
-        //                    Adress = oReader["Adress"].ToString(),
-        //                    balance = int.Parse(oReader["balance"].ToString()),
-        //                    BlackList = bool.Parse(oReader["BlackList"].ToString()),
-        //                    PhoneNumber = int.Parse(oReader["PhoneNumber"].ToString()),
-        //                    Email = oReader["Email"].ToString(),
-        //                    Created_date = DateTime.Parse(oReader["Created_date"].ToString())
-        //                };
-        //                BorrowOrder haha = new BorrowOrder()
-        //                {
-
-        //                };
-        //                Customer = TempCustomer;
-        //                Customer.
-
-
-        //            }
-        //            _Conn.Close();
-        //        }
-        //    }
-        //    return ListOfCustomers;
-        //}
 
         internal void AddCustomer(Customer Customer)
         {
+
+            _Conn = new SqlConnection(ConnectionString);
             try
             {
                 _Conn.Open();
                 String SQLString = $"INSERT INTO Customer ([FirstName],[LastName]," +
                     $"[Adress],[Balance],[PhoneNumber],[Email],[Created_Date],[BlackList])" +
                     $"VALUES('{Customer.FirstName}', '{Customer.LastName}', '{Customer.Adress}', {0},{Customer.PhoneNumber}" +
-                    $",'{Customer.Email}','{DateTime.Now}',{0})";
+                    $",'{Customer.Email}','{DateTime.Now.ToString("yyyy/MM/dd")}',{0})";
 
-                using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
+                using (SqlCommand SQLCmd = new SqlCommand(SQLString,_Conn))
                 {
                     SQLCmd.ExecuteNonQuery();
                 }
                 _Conn.Close();
             }
             catch (SqlException ex) { throw ex; }
-            finally { _Conn.Dispose(); }
+            finally {_Conn.Dispose(); }
         }
         internal void UpdateCustomer(Customer Customer)
         {
+            _Conn = new SqlConnection(ConnectionString);
             try
             {
                 _Conn.Open();
@@ -146,29 +115,30 @@ namespace RuilenLeenSysteem.DAL
                     $"PhoneNumber = '{Customer.PhoneNumber}'," +
                     $"Email = '{Customer.Email}' WHERE Id = {Customer.Id};";
 
-                using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
+                using (SqlCommand SQLCmd = new SqlCommand(SQLString,_Conn))
                 {
                     SQLCmd.ExecuteNonQuery();
                 }
                 _Conn.Close();
             }
             catch (SqlException ex) { throw ex; }
-            finally { _Conn.Dispose(); }
+            finally {_Conn.Dispose(); }
         }
 
         internal void DeleteCustomers(int Id)
         {
+            _Conn = new SqlConnection(ConnectionString);
             try
             {
                 _Conn.Open();
 
                 String SQLString = $"Delete Customer Where Id ={Id}";
 
-                using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
+                using (SqlCommand SQLCmd = new SqlCommand(SQLString,_Conn))
                 {
                     SQLCmd.ExecuteNonQuery();
                 }
-                _Conn.Close();
+               _Conn.Close();
             }
             catch (SqlException ex) { throw ex; }
             finally { _Conn.Dispose(); }

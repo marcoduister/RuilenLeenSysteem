@@ -26,17 +26,24 @@ namespace RuilenLeenSysteem.BUS
             throw new NotImplementedException();
         }
 
-        internal bool AddCustomer(string FirstName, string LastName, string Address, string Email, string PhoneNumber)
+        internal bool AddCustomer(string FirstName, string LastName, string Address, string Email, int PhoneNumber)
         {
+            bool created = false;
             if (!_DbData.ExistCustomerByEmail(Email))
             {
                 Customer AddCustomer = new Customer()
                 {
-
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Adress = Address,
+                    Email = Email,
+                    PhoneNumber = PhoneNumber
                 };
+                _DbData.AddCustomer(AddCustomer);
+                created = true;
             }
 
-            return false;
+            return created;
             
         }
     }

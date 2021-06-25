@@ -17,12 +17,12 @@ namespace RuilenLeenSysteem.DAL
          * 
          * All functions for data handling for the user are below
          */
-
+        DataAcces dbAcces = new  DataAcces();
         public bool VerifyAccount(User User)
         {
             bool ValidUser = false;
 
-            using (_Conn)
+            using (dbAcces._Conn)
             {
                 SqlCommand SQLCmd = new SqlCommand($"Select * From [User] where UserName='{User.UserName}' AND Password='{User.Password}' COLLATE SQL_Latin1_General_CP1_CS_AS", _Conn);
                 _Conn.Open();
@@ -47,7 +47,7 @@ namespace RuilenLeenSysteem.DAL
         {
 
             List<User> ListOfUsers = new List<User>();
-            using (_Conn)
+            using (dbAcces._Conn)
             {
                 string Email = "marco@zuyd.nlq";
                 SqlCommand SQLCmd = new SqlCommand($"Select * From [User] where Email='{Email}';", _Conn);

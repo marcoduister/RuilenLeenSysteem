@@ -61,7 +61,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Txt_CustomerLastName.Name = "Txt_CustomerLastName";
             this.Txt_CustomerLastName.Size = new System.Drawing.Size(168, 22);
             this.Txt_CustomerLastName.TabIndex = 28;
-            this.Txt_CustomerLastName.TextChanged += new System.EventHandler(this.Txt_CustomerLastName_TextChanged);
             // 
             // Txt_CustomerEmail
             // 
