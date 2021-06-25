@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace RuilenLeenSysteem.View.UserControls.Borrow
 {
-    public partial class BorrowProductOverview : UserControl
+    public partial class BorrowProduct : UserControl
     {
-        public BorrowProductOverview()
+        public BorrowProduct()
         {
             InitializeComponent();
-        }
-
-        private void BorrowProductOverview_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

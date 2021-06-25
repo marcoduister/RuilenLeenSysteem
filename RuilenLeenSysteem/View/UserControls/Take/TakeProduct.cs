@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RuilenLeenSysteem.View.UserControls.Borrow
+namespace RuilenLeenSysteem.View.UserControls.Take
 {
-    public partial class BorrowProductOverview : UserControl
+    public partial class TakeProduct : UserControl
     {
-        public BorrowProductOverview()
+        public TakeProduct()
         {
             InitializeComponent();
-        }
-
-        private void BorrowProductOverview_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

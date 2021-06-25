@@ -73,6 +73,7 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Controls.Add(this.Label1);
             this.Name = "BorrowProductOverview";
             this.Size = new System.Drawing.Size(895, 554);
+            this.Load += new System.EventHandler(this.BorrowProductOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_BorrowProductOverview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

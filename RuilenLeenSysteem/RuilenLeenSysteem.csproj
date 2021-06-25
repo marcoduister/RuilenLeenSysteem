@@ -75,6 +75,12 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Borrow\BorrowProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Borrow\BorrowProduct.Designer.cs">
+      <DependentUpon>BorrowProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Borrow\BorrowProductOverview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,18 @@
     <Compile Include="View\UserControls\Products\ProductReview.Designer.cs">
       <DependentUpon>ProductReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Take\TakeProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Take\TakeProduct.Designer.cs">
+      <DependentUpon>TakeProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Take\TakeProductOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Take\TakeProductOverview.Designer.cs">
+      <DependentUpon>TakeProductOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Trade\TradeOverview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Borrow\BorrowProduct.resx">
+      <DependentUpon>BorrowProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Borrow\BorrowProductOverview.resx">
       <DependentUpon>BorrowProductOverview.cs</DependentUpon>
@@ -218,6 +239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Products\ProductReview.resx">
       <DependentUpon>ProductReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Take\TakeProduct.resx">
+      <DependentUpon>TakeProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Take\TakeProductOverview.resx">
+      <DependentUpon>TakeProductOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Trade\TradeOverview.resx">
       <DependentUpon>TradeOverview.cs</DependentUpon>
