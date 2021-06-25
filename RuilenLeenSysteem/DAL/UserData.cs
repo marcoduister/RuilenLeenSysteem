@@ -43,30 +43,5 @@ namespace RuilenLeenSysteem.DAL
             return ValidUser;
         }
 
-        public void GetAllUsers()
-        {
-
-            List<User> ListOfUsers = new List<User>();
-            using (dbAcces._Conn)
-            {
-                string Email = "marco@zuyd.nlq";
-                SqlCommand SQLCmd = new SqlCommand($"Select * From [User] where Email='{Email}';", _Conn);
-                _Conn.Open();
-                using (SqlDataReader oReader = SQLCmd.ExecuteReader())
-                {
-                    while (oReader.Read())
-                    {
-                        User TempUser = new User()
-                        {
-                            Id = Int16.Parse(oReader["Id"].ToString()),
-                            UserName = oReader["Email"].ToString(),
-                            Password = oReader["Password"].ToString()
-                        };
-                        ListOfUsers.Add(TempUser);
-                    }
-                    _Conn.Close();
-                }
-            }
-        }
     }
 }

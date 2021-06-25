@@ -40,9 +40,10 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.CustomerFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BlackList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerManage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Read = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_CustomerOverview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,15 +85,17 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.CustomerFirstName,
             this.CustomerLastName,
             this.Email,
-            this.Balance,
             this.BlackList,
-            this.CustomerManage});
+            this.btn_Read,
+            this.btn_Edit,
+            this.btn_Delete});
             this.Dgv_CustomerOverview.Location = new System.Drawing.Point(60, 184);
             this.Dgv_CustomerOverview.Name = "Dgv_CustomerOverview";
             this.Dgv_CustomerOverview.RowHeadersWidth = 51;
             this.Dgv_CustomerOverview.RowTemplate.Height = 24;
             this.Dgv_CustomerOverview.Size = new System.Drawing.Size(775, 337);
             this.Dgv_CustomerOverview.TabIndex = 8;
+            this.Dgv_CustomerOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CustomerOverview_CellContentClick);
             // 
             // Txt_CustomerSearch
             // 
@@ -130,13 +133,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Email.Name = "Email";
             this.Email.Width = 125;
             // 
-            // Balance
-            // 
-            this.Balance.HeaderText = "Balance";
-            this.Balance.MinimumWidth = 6;
-            this.Balance.Name = "Balance";
-            this.Balance.Width = 125;
-            // 
             // BlackList
             // 
             this.BlackList.HeaderText = "BlackList";
@@ -144,13 +140,32 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.BlackList.Name = "BlackList";
             this.BlackList.Width = 125;
             // 
-            // CustomerManage
+            // btn_Read
             // 
-            this.CustomerManage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CustomerManage.HeaderText = "Beheer";
-            this.CustomerManage.MinimumWidth = 6;
-            this.CustomerManage.Name = "CustomerManage";
-            this.CustomerManage.ReadOnly = true;
+            this.btn_Read.HeaderText = "inzien";
+            this.btn_Read.MinimumWidth = 6;
+            this.btn_Read.Name = "btn_Read";
+            this.btn_Read.Text = "Inzien";
+            this.btn_Read.UseColumnTextForButtonValue = true;
+            this.btn_Read.Width = 125;
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.HeaderText = "Bewerk";
+            this.btn_Edit.MinimumWidth = 6;
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Text = "Bewerk";
+            this.btn_Edit.UseColumnTextForButtonValue = true;
+            this.btn_Edit.Width = 125;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.HeaderText = "Verwijder";
+            this.btn_Delete.MinimumWidth = 6;
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Text = "Verwijder";
+            this.btn_Delete.UseColumnTextForButtonValue = true;
+            this.btn_Delete.Width = 125;
             // 
             // CustomerOverview
             // 
@@ -179,8 +194,9 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
         private System.Windows.Forms.DataGridViewTextBoxColumn BlackList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerManage;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Read;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Delete;
     }
 }

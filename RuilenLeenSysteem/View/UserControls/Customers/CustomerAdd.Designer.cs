@@ -182,6 +182,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Controls.Add(this.Lbl_Customer);
             this.Name = "CustomerAdd";
             this.Size = new System.Drawing.Size(895, 554);
+            this.Load += new System.EventHandler(this.CustomerAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

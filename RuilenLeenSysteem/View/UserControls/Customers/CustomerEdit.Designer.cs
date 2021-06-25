@@ -42,6 +42,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.label1 = new System.Windows.Forms.Label();
             this.Lbl_Customer = new System.Windows.Forms.Label();
             this.Btn_CustomerEdit = new System.Windows.Forms.Button();
+            this.Btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Txt_CustomerLastName
@@ -135,7 +136,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Lbl_Customer.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Customer.Location = new System.Drawing.Point(136, 47);
             this.Lbl_Customer.Name = "Lbl_Customer";
-            this.Lbl_Customer.Size = new System.Drawing.Size(118, 41);
+            this.Lbl_Customer.Size = new System.Drawing.Size(114, 40);
             this.Lbl_Customer.TabIndex = 29;
             this.Lbl_Customer.Text = "Klant";
             // 
@@ -149,11 +150,24 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Btn_CustomerEdit.Text = "Wijzig";
             this.Btn_CustomerEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_CustomerEdit.UseVisualStyleBackColor = true;
+            this.Btn_CustomerEdit.Click += new System.EventHandler(this.Btn_CustomerEdit_Click);
             // 
-            // CustomerChange
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.Location = new System.Drawing.Point(233, 397);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(110, 93);
+            this.Btn_Cancel.TabIndex = 41;
+            this.Btn_Cancel.Text = "Annuleren";
+            this.Btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
+            // 
+            // CustomerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Btn_CustomerEdit);
             this.Controls.Add(this.Txt_CustomerLastName);
             this.Controls.Add(this.Txt_CustomerEmail);
@@ -166,8 +180,9 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Lbl_Customer);
-            this.Name = "CustomerChange";
+            this.Name = "CustomerEdit";
             this.Size = new System.Drawing.Size(895, 554);
+            this.Load += new System.EventHandler(this.CustomerEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +202,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Lbl_Customer;
         private System.Windows.Forms.Button Btn_CustomerEdit;
+        private System.Windows.Forms.Button Btn_Cancel;
     }
 }

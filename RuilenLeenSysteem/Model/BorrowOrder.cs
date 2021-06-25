@@ -9,12 +9,15 @@ namespace RuilenLeenSysteem.Model
     public class BorrowOrder
     {
         // Property / Attributes
-        protected int Id { get; }
+        public int Id { get; set; }
         public DateTime Start_date { get; set; }
         public DateTime Eind_date { get; set; }
 
         // Relationships
-        public int Customer_id { get; }
+        public int Product_id { get; set; }
+        public Product Product { get; set; }
+
+        public int Customer_id { get; set; }
         public Customer Customer { get; set; }
     }
 }

@@ -41,9 +41,18 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Txt_CustomerEmail = new System.Windows.Forms.TextBox();
             this.Txt_CustomerLastName = new System.Windows.Forms.TextBox();
             this.Dgv_TradeView = new System.Windows.Forms.DataGridView();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dgv_BorrowView = new System.Windows.Forms.DataGridView();
+            this.Product_borrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points_borrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eindBorrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.Txt_balance = new System.Windows.Forms.TextBox();
+            this.Balance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_BorrowView)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +63,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Lbl_Customer.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Customer.Location = new System.Drawing.Point(97, 28);
             this.Lbl_Customer.Name = "Lbl_Customer";
-            this.Lbl_Customer.Size = new System.Drawing.Size(118, 41);
+            this.Lbl_Customer.Size = new System.Drawing.Size(114, 40);
             this.Lbl_Customer.TabIndex = 8;
             this.Lbl_Customer.Text = "Klant";
             // 
@@ -112,14 +121,15 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             // 
             this.Txt_CustomerFirstName.Location = new System.Drawing.Point(251, 94);
             this.Txt_CustomerFirstName.Name = "Txt_CustomerFirstName";
+            this.Txt_CustomerFirstName.ReadOnly = true;
             this.Txt_CustomerFirstName.Size = new System.Drawing.Size(168, 22);
             this.Txt_CustomerFirstName.TabIndex = 14;
-            this.Txt_CustomerFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Txt_CustomerAdress
             // 
             this.Txt_CustomerAdress.Location = new System.Drawing.Point(251, 137);
             this.Txt_CustomerAdress.Name = "Txt_CustomerAdress";
+            this.Txt_CustomerAdress.ReadOnly = true;
             this.Txt_CustomerAdress.Size = new System.Drawing.Size(168, 22);
             this.Txt_CustomerAdress.TabIndex = 15;
             // 
@@ -127,6 +137,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             // 
             this.Txt_CustomerPhoneNumber.Location = new System.Drawing.Point(251, 178);
             this.Txt_CustomerPhoneNumber.Name = "Txt_CustomerPhoneNumber";
+            this.Txt_CustomerPhoneNumber.ReadOnly = true;
             this.Txt_CustomerPhoneNumber.Size = new System.Drawing.Size(168, 22);
             this.Txt_CustomerPhoneNumber.TabIndex = 16;
             // 
@@ -134,6 +145,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             // 
             this.Txt_CustomerEmail.Location = new System.Drawing.Point(680, 137);
             this.Txt_CustomerEmail.Name = "Txt_CustomerEmail";
+            this.Txt_CustomerEmail.ReadOnly = true;
             this.Txt_CustomerEmail.Size = new System.Drawing.Size(168, 22);
             this.Txt_CustomerEmail.TabIndex = 17;
             // 
@@ -141,12 +153,17 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             // 
             this.Txt_CustomerLastName.Location = new System.Drawing.Point(680, 94);
             this.Txt_CustomerLastName.Name = "Txt_CustomerLastName";
+            this.Txt_CustomerLastName.ReadOnly = true;
             this.Txt_CustomerLastName.Size = new System.Drawing.Size(168, 22);
             this.Txt_CustomerLastName.TabIndex = 18;
             // 
             // Dgv_TradeView
             // 
             this.Dgv_TradeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_TradeView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
+            this.Points,
+            this.OrderDate});
             this.Dgv_TradeView.Location = new System.Drawing.Point(33, 270);
             this.Dgv_TradeView.Name = "Dgv_TradeView";
             this.Dgv_TradeView.RowHeadersWidth = 51;
@@ -154,15 +171,83 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Dgv_TradeView.Size = new System.Drawing.Size(371, 245);
             this.Dgv_TradeView.TabIndex = 19;
             // 
+            // Name
+            // 
+            this.Name.Frozen = true;
+            this.Name.HeaderText = "Product";
+            this.Name.MinimumWidth = 6;
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Width = 125;
+            // 
+            // Points
+            // 
+            this.Points.Frozen = true;
+            this.Points.HeaderText = "punten";
+            this.Points.MinimumWidth = 6;
+            this.Points.Name = "Points";
+            this.Points.ReadOnly = true;
+            this.Points.Width = 125;
+            // 
+            // OrderDate
+            // 
+            this.OrderDate.Frozen = true;
+            this.OrderDate.HeaderText = "BestelDatum";
+            this.OrderDate.MinimumWidth = 6;
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
+            this.OrderDate.Width = 125;
+            // 
             // Dgv_BorrowView
             // 
             this.Dgv_BorrowView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_BorrowView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Product_borrow,
+            this.Points_borrow,
+            this.StartDate,
+            this.eindBorrow});
             this.Dgv_BorrowView.Location = new System.Drawing.Point(477, 270);
             this.Dgv_BorrowView.Name = "Dgv_BorrowView";
             this.Dgv_BorrowView.RowHeadersWidth = 51;
             this.Dgv_BorrowView.RowTemplate.Height = 24;
             this.Dgv_BorrowView.Size = new System.Drawing.Size(371, 245);
             this.Dgv_BorrowView.TabIndex = 20;
+            // 
+            // Product_borrow
+            // 
+            this.Product_borrow.Frozen = true;
+            this.Product_borrow.HeaderText = "Product";
+            this.Product_borrow.MinimumWidth = 6;
+            this.Product_borrow.Name = "Product_borrow";
+            this.Product_borrow.ReadOnly = true;
+            this.Product_borrow.Width = 125;
+            // 
+            // Points_borrow
+            // 
+            this.Points_borrow.Frozen = true;
+            this.Points_borrow.HeaderText = "punten";
+            this.Points_borrow.MinimumWidth = 6;
+            this.Points_borrow.Name = "Points_borrow";
+            this.Points_borrow.ReadOnly = true;
+            this.Points_borrow.Width = 125;
+            // 
+            // StartDate
+            // 
+            this.StartDate.Frozen = true;
+            this.StartDate.HeaderText = "Start Leen Datum";
+            this.StartDate.MinimumWidth = 6;
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            this.StartDate.Width = 125;
+            // 
+            // eindBorrow
+            // 
+            this.eindBorrow.Frozen = true;
+            this.eindBorrow.HeaderText = "einde leen Datum";
+            this.eindBorrow.MinimumWidth = 6;
+            this.eindBorrow.Name = "eindBorrow";
+            this.eindBorrow.ReadOnly = true;
+            this.eindBorrow.Width = 125;
             // 
             // label6
             // 
@@ -184,10 +269,30 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.label7.TabIndex = 22;
             this.label7.Text = "Leen overzicht";
             // 
+            // Txt_balance
+            // 
+            this.Txt_balance.Location = new System.Drawing.Point(680, 179);
+            this.Txt_balance.Name = "Txt_balance";
+            this.Txt_balance.ReadOnly = true;
+            this.Txt_balance.Size = new System.Drawing.Size(168, 22);
+            this.Txt_balance.TabIndex = 24;
+            // 
+            // Balance
+            // 
+            this.Balance.AutoSize = true;
+            this.Balance.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Balance.Location = new System.Drawing.Point(549, 177);
+            this.Balance.Name = "Balance";
+            this.Balance.Size = new System.Drawing.Size(93, 23);
+            this.Balance.TabIndex = 23;
+            this.Balance.Text = "Balance:";
+            // 
             // CustomerReadProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Txt_balance);
+            this.Controls.Add(this.Balance);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Dgv_BorrowView);
@@ -203,7 +308,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Lbl_Customer);
-            this.Name = "CustomerReadProduct";
             this.Size = new System.Drawing.Size(895, 554);
             this.Load += new System.EventHandler(this.CustomerReadProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeView)).EndInit();
@@ -230,5 +334,14 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
         private System.Windows.Forms.DataGridView Dgv_BorrowView;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Points;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_borrow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Points_borrow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eindBorrow;
+        private System.Windows.Forms.TextBox Txt_balance;
+        private System.Windows.Forms.Label Balance;
     }
 }

@@ -21,9 +21,30 @@ namespace RuilenLeenSysteem.BUS
             return _DbData.GetAllCustomers();
         }
 
-        internal Customer GetCustomersById()
+        internal Customer GetCustomersById(int Id)
         {
-            throw new NotImplementedException();
+            Customer ReturnCustomer = new Customer();
+            if (_DbData.ExistCustomerById(Id))
+            {
+                ReturnCustomer = _DbData.GetCustomersById(Id);
+            }
+
+            return ReturnCustomer;
+            
+        }
+        internal Customer GetReadCustomersById(int Id)
+        {
+            Customer ReturnCustomer = new Customer();
+            OrderData DBOrderData = new OrderData();
+            if (_DbData.ExistCustomerById(Id))
+            {
+                ReturnCustomer = _DbData.GetCustomersById(Id);
+                ReturnCustomer.AllBorrowOrders = DBOrderData.GetAllBorrowOrdersByCustomerId(Id);
+                ReturnCustomer.AllTradeOrders = DBOrderData.GetAllBTradeOrdersByCustomerId(Id);
+            }
+
+            return ReturnCustomer;
+
         }
 
         internal bool AddCustomer(string FirstName, string LastName, string Address, string Email, int PhoneNumber)
@@ -45,6 +66,39 @@ namespace RuilenLeenSysteem.BUS
 
             return created;
             
+        }
+
+        internal bool EditCustomer(int Id,string FirstName, string LastName, string Address, string Email, int PhoneNumber)
+        {
+            bool created = false;
+            if (_DbData.ExistCustomerById(Id))
+            {
+                Customer EditCustomer = new Customer()
+                {
+                    Id = Id,
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Adress = Address,
+                    Email = Email,
+                    PhoneNumber = PhoneNumber
+                };
+                _DbData.EditCustomer(EditCustomer);
+                created = true;
+            }
+
+            return created;
+        }
+
+        internal bool DelteCustomer(int Id)
+        {
+            bool Deleted = false;
+            if (_DbData.ExistCustomerById(Id))
+            {
+                _DbData.DeleteCustomer(Id);
+                Deleted = true;
+            }
+
+            return Deleted;
         }
     }
 }
