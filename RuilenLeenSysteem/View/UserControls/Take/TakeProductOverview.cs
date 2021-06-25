@@ -16,5 +16,13 @@ namespace RuilenLeenSysteem.View.UserControls.Take
         {
             InitializeComponent();
         }
+
+        private void Btn_TakeProduct_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            TakeProduct Page = new TakeProduct();
+            Page.Dock = DockStyle.Fill;
+            this.Controls.Add(Page);
+        }
     }
 }

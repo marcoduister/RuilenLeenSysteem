@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RuilenLeenSysteem.Model
 {
-    class Product
+    public class Product
     {
         // Property / Attributes
         public int Id { get; set; }

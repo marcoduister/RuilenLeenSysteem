@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RuilenLeenSysteem.Model
 {
-    class BorrowOrder
+    public class BorrowOrder
     {
         // Property / Attributes
         protected int Id { get; }

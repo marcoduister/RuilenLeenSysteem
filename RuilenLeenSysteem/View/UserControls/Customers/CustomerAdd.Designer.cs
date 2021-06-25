@@ -42,6 +42,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_CustomerAdd = new System.Windows.Forms.Button();
+            this.Btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Lbl_Customer
@@ -50,7 +51,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Lbl_Customer.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Customer.Location = new System.Drawing.Point(124, 43);
             this.Lbl_Customer.Name = "Lbl_Customer";
-            this.Lbl_Customer.Size = new System.Drawing.Size(118, 41);
+            this.Lbl_Customer.Size = new System.Drawing.Size(114, 40);
             this.Lbl_Customer.TabIndex = 9;
             this.Lbl_Customer.Text = "Klant";
             // 
@@ -150,11 +151,24 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Btn_CustomerAdd.Text = "Toevoegen";
             this.Btn_CustomerAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_CustomerAdd.UseVisualStyleBackColor = true;
+            this.Btn_CustomerAdd.Click += new System.EventHandler(this.Btn_CustomerAdd_Click);
+            // 
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.Location = new System.Drawing.Point(211, 409);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(110, 93);
+            this.Btn_Cancel.TabIndex = 30;
+            this.Btn_Cancel.Text = "Annuleren";
+            this.Btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
             // CustomerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Btn_CustomerAdd);
             this.Controls.Add(this.Txt_CustomerLastName);
             this.Controls.Add(this.Txt_CustomerEmail);
@@ -188,5 +202,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Btn_CustomerAdd;
+        private System.Windows.Forms.Button Btn_Cancel;
     }
 }

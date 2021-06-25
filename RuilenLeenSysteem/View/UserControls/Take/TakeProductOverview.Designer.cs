@@ -76,6 +76,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Btn_TakeProduct.Text = "Innemen";
             this.Btn_TakeProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_TakeProduct.UseVisualStyleBackColor = true;
+            this.Btn_TakeProduct.Click += new System.EventHandler(this.Btn_TakeProduct_Click);
             // 
             // TakeProductOverview
             // 

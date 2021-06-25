@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RuilenLeenSysteem.Model
 {
-    class TradeOrder
+    public class TradeOrder
     {
         // Property / Attributes
-        protected int Id { get; }
+        public int Id { get; }
         public DateTime Order_Date { get; set; }
 
         // Relationships

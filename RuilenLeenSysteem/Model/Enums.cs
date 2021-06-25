@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace RuilenLeenSysteem.Model
 {
-    enum Type
+    public enum Type
     {
         borrow,
         Trade
     }
-    enum Status
+    public enum Status
     {
         waiting,
         OnderReview,
         GivingBack
     }
-    enum Roll
+    public enum Roll
     {
         Volunteer,
         IT_Employee,

@@ -76,6 +76,7 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Btn_CategorieAdd.Text = "Toevoegen";
             this.Btn_CategorieAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_CategorieAdd.UseVisualStyleBackColor = true;
+            this.Btn_CategorieAdd.Click += new System.EventHandler(this.Btn_CategorieAdd_Click);
             // 
             // CategorieOverview
             // 

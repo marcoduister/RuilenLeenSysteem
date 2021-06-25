@@ -16,5 +16,13 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
         {
             InitializeComponent();
         }
+
+        private void Btn_CategorieAdd_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            CategorieAdd Page = new CategorieAdd();
+            Page.Dock = DockStyle.Fill;
+            this.Controls.Add(Page);
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Txt_ProductSearch = new System.Windows.Forms.TextBox();
             this.Dgv_ProductOverview = new System.Windows.Forms.DataGridView();
             this.Label1 = new System.Windows.Forms.Label();
-            this.Btn_CategorieAdd = new System.Windows.Forms.Button();
+            this.Btn_ProductAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_ProductOverview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,16 +66,17 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Label1.TabIndex = 15;
             this.Label1.Text = "Producten";
             // 
-            // Btn_CategorieAdd
+            // Btn_ProductAdd
             // 
-            this.Btn_CategorieAdd.Image = ((System.Drawing.Image)(resources.GetObject("Btn_CategorieAdd.Image")));
-            this.Btn_CategorieAdd.Location = new System.Drawing.Point(63, 119);
-            this.Btn_CategorieAdd.Name = "Btn_CategorieAdd";
-            this.Btn_CategorieAdd.Size = new System.Drawing.Size(110, 93);
-            this.Btn_CategorieAdd.TabIndex = 14;
-            this.Btn_CategorieAdd.Text = "Toevoegen";
-            this.Btn_CategorieAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.Btn_CategorieAdd.UseVisualStyleBackColor = true;
+            this.Btn_ProductAdd.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ProductAdd.Image")));
+            this.Btn_ProductAdd.Location = new System.Drawing.Point(63, 119);
+            this.Btn_ProductAdd.Name = "Btn_ProductAdd";
+            this.Btn_ProductAdd.Size = new System.Drawing.Size(110, 93);
+            this.Btn_ProductAdd.TabIndex = 14;
+            this.Btn_ProductAdd.Text = "Toevoegen";
+            this.Btn_ProductAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Btn_ProductAdd.UseVisualStyleBackColor = true;
+            this.Btn_ProductAdd.Click += new System.EventHandler(this.Btn_ProductAdd_Click);
             // 
             // ProductOverview
             // 
@@ -84,7 +85,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Controls.Add(this.Txt_ProductSearch);
             this.Controls.Add(this.Dgv_ProductOverview);
             this.Controls.Add(this.Label1);
-            this.Controls.Add(this.Btn_CategorieAdd);
+            this.Controls.Add(this.Btn_ProductAdd);
             this.Name = "ProductOverview";
             this.Size = new System.Drawing.Size(895, 554);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_ProductOverview)).EndInit();
@@ -98,6 +99,6 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         private System.Windows.Forms.TextBox Txt_ProductSearch;
         private System.Windows.Forms.DataGridView Dgv_ProductOverview;
         private System.Windows.Forms.Label Label1;
-        private System.Windows.Forms.Button Btn_CategorieAdd;
+        private System.Windows.Forms.Button Btn_ProductAdd;
     }
 }

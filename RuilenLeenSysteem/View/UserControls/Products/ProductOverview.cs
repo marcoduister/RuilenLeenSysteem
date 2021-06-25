@@ -16,5 +16,13 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         {
             InitializeComponent();
         }
+
+        private void Btn_ProductAdd_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            ProductAdd Page = new ProductAdd();
+            Page.Dock = DockStyle.Fill;
+            this.Controls.Add(Page);
+        }
     }
 }

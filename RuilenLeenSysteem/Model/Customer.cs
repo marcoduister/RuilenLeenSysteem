@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace RuilenLeenSysteem.Model
 {
-    class Customer
+    public class Customer
     {
         // Property / Attributes
-        public int Id { get; }
-        public string FirsName { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Adress { get; set; }
         public int balance { get; set; }
-        public string PhoneNumber { get; set; }
+        public Boolean BlackList { get; set; }
+        public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public DateTime Created_date { get; set; }
+
 
         // Relationships
         public List<TradeOrder> AllTradeOrders = new List<TradeOrder>();
