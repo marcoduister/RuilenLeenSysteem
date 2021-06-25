@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RuilenLeenSysteem.View.UserControls.Home
+namespace RuilenLeenSysteem.View.UserControls.Customers
 {
-    public partial class Home : UserControl
+    public partial class CustomerAdd : UserControl
     {
-        public Home()
+        public CustomerAdd()
         {
             InitializeComponent();
         }
 
+        private void Txt_CustomerLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

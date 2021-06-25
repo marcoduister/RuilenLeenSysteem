@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RuilenLeenSysteem.View.UserControls.Home
+namespace RuilenLeenSysteem.View.UserControls.Products
 {
-    public partial class Home : UserControl
+    public partial class ProductAdd : UserControl
     {
-        public Home()
+        public ProductAdd()
         {
             InitializeComponent();
         }
-
     }
 }
