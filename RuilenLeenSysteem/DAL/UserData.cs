@@ -18,13 +18,13 @@ namespace RuilenLeenSysteem.DAL
          * All functions for data handling for the user are below
          */
 
-        public bool VerifyAccount(string Email, String Password)
+        public bool VerifyAccount(User User)
         {
             bool ValidUser = false;
 
             using (_Conn)
             {
-                SqlCommand SQLCmd = new SqlCommand($"Select * From [User] where Email='{Email}' AND Password='{Password}' COLLATE SQL_Latin1_General_CP1_CS_AS", _Conn);
+                SqlCommand SQLCmd = new SqlCommand($"Select * From [User] where UserName='{User.UserName}' AND Password='{User.Password}' COLLATE SQL_Latin1_General_CP1_CS_AS", _Conn);
                 _Conn.Open();
                 using (SqlDataReader oReader = SQLCmd.ExecuteReader())
                 {

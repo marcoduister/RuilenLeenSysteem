@@ -13,7 +13,7 @@ namespace RuilenLeenSysteem.Model
         public string Name { get; set; }
         public string Description { get; set; }
         public int Points { get; set; }
-        public byte Image  {get; set; }
+        public byte Image { get; set; }
         public Status Status { get; set; }
         public Type Type { get; set; }
 
@@ -21,7 +21,7 @@ namespace RuilenLeenSysteem.Model
         public int Customer_Id { get; set; }
         public Customer Customer { get; set; }
         public int Categorie_id { get; set; }
-        public Categorie Categorie  {get; set; }
+        public Categorie Categorie { get; set; }
 
     }
 }

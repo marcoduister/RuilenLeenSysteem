@@ -1,4 +1,5 @@
 ﻿using RuilenLeenSysteem.DAL;
+using RuilenLeenSysteem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,23 @@ namespace RuilenLeenSysteem.BUS
 {
     class UserController
     {
-        private DataAcces _DBContext;
+        private UserData _UserData;
 
         public UserController()
         {
-            _DBContext = new DataAcces();
+            _UserData = new UserData();
         }
 
-        public bool LogIn(string Email, string Password)
+        public bool LogIn(Roll UserRoll)
         {
-
-            bool LoggedIn = true;//_DBContext.VerifyAccount(Email, Password);
-            if (LoggedIn)
+            User CurrentUser = new User();
+            if (UserRoll == Roll.Admin)
+            {
+                CurrentUser.UserName = "Beheerder";
+                CurrentUser.Password = "Qwerty3";
+            }
+            bool LoggedIn = true; _UserData.VerifyAccount(CurrentUser);
+            if (LoggedIn && UserRoll == Roll.Admin)
             {
 
             }

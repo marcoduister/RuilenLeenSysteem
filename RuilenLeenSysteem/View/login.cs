@@ -21,21 +21,54 @@ namespace RuilenLeenSysteem.View
             _UserController = new UserController();
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void Btn_LoginAdmin_Click(object sender, EventArgs e)
         {
-            if (_UserController.LogIn(Textbox_email.Text, Textbox_password.Text))
+            if (_UserController.LogIn(Roll.Admin))
             {
                 this.Hide();
                 MainForm MainForm = new MainForm();
                 MainForm.ShowDialog();
                 MainForm.Dispose();
                 this.Show();
-                this.Textbox_email.Text = "";
-                this.Textbox_password.Text = "";
+
             }
             else
             {
                 MessageBox.Show("U hebt mogelijk foute inlog gegevens gebruik!!");
+            }
+        }
+
+        private void Btn_LoginIT_Employee_Click(object sender, EventArgs e)
+        {
+            if (_UserController.LogIn(Roll.IT_Employee))
+            {
+                this.Hide();
+                MainForm MainForm = new MainForm();
+                MainForm.ShowDialog();
+                MainForm.Dispose();
+                this.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("dit is nog niet geimplementeerd probeer het later opnieuw!!");
+            }
+        }
+
+        private void Btn_LoginVolunteer_Click(object sender, EventArgs e)
+        {
+            if (_UserController.LogIn(Roll.Volunteer))
+            {
+                this.Hide();
+                MainForm MainForm = new MainForm();
+                MainForm.ShowDialog();
+                MainForm.Dispose();
+                this.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("dit is nog niet geimplementeerd probeer het later opnieuw!!");
             }
         }
     }

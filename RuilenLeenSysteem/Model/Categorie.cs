@@ -10,7 +10,7 @@ namespace RuilenLeenSysteem.Model
     {
         // Property / Attributes
         protected int Id { get; }
-        public string  Name { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public DateTime Created_date { get; set; }
 

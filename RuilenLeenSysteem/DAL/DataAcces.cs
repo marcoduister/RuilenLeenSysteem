@@ -12,7 +12,7 @@ namespace RuilenLeenSysteem.DAL
 {
     public class DataAcces
     {
-        private string ConnectionString = "Data Source=.;Initial Catalog=RuilWinkelVaals.DEV; Integrated Security=SSPI;";
+        private string ConnectionString = "Data Source=.;Initial Catalog=ruilwinkel.dev; Integrated Security=SSPI;";
         public SqlConnection _Conn;
 
         /// <summary>

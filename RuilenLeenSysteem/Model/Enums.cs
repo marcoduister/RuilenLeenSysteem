@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace RuilenLeenSysteem.Model
 {
-        enum Type
-        {
-            borrow,
-            Trade
-        }
-        enum Status
-        {
-            waiting,
-            OnderReview,
-            GivingBack
-        }
-        enum Roll
-        {
-            Volunteer,
-            IT_Employee,
-            Admin
-        }
+    enum Type
+    {
+        borrow,
+        Trade
+    }
+    enum Status
+    {
+        waiting,
+        OnderReview,
+        GivingBack
+    }
+    enum Roll
+    {
+        Volunteer,
+        IT_Employee,
+        Admin
+    }
     
 }
