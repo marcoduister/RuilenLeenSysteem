@@ -20,9 +20,7 @@ namespace RuilenLeenSysteem.DAL
         /// </summary>
         public DataAcces()
         {
-           
             _Conn = new SqlConnection(ConnectionString);
-
         }
     }
 }

@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RuilenLeenSysteem.View.UserControls.Home
+namespace RuilenLeenSysteem.View.UserControls.Customers
 {
-    public partial class Home : UserControl
+    public partial class CustomerEdit : UserControl
     {
-        public Home()
+        public CustomerEdit()
         {
             InitializeComponent();
         }
-
     }
 }
