@@ -1,4 +1,5 @@
 ﻿using System;
+using RuilenLeenSysteem.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,12 @@ namespace RuilenLeenSysteem.Model
 {
     class BorrowOrder
     {
+        // Property / Attributes
         protected int Id { get; }
-        public int Total_points
-        {
-            get
-            {
-                int points = 0;
-                foreach (var product in AllBorrowProducts)
-                {
-                    points += product.Points;
-                }
-                return points;
-            }
-        }
+        public DateTime Start_date { get; set; }
+        public DateTime Eind_date { get; set; }
 
-        public List<BorrowProduct> AllBorrowProducts = new List<BorrowProduct>();
-
+        // Relationships
         public int Customer_id { get; }
         public Customer Customer { get; set; }
     }
