@@ -8,14 +8,16 @@ namespace RuilenLeenSysteem.Model
 {
     public enum Type
     {
-        borrow,
+        Borrow,
         Trade
     }
     public enum Status
     {
-        waiting,
+        Sold,
+        InStock,
+        Loaned,
         OnderReview,
-        GivingBack
+        GivingBack,
     }
     public enum Roll
     {

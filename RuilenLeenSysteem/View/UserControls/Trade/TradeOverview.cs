@@ -27,7 +27,7 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
         {
             List<Product> TradeProductList = _ProductControlle.GetAllProductsByType(Type.Trade);
 
-            foreach (var product in TradeProductList)
+            foreach (var product in TradeProductList.Where(A => A.Status == Model.Status.InStock))
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(Dgv_TradeProductOverview);

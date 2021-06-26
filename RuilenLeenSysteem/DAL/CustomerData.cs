@@ -50,6 +50,26 @@ namespace RuilenLeenSysteem.DAL
             return ListOfCustomers;
         }
 
+        internal void PointsExchange(int customer_id, int points)
+        {
+            _Conn = new SqlConnection(ConnectionString);
+            try
+            {
+                _Conn.Open();
+
+                String SQLString = $"UPDATE Customer SET " +
+                    $"Balance = '{points}' WHERE Id = {customer_id};";
+
+                using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
+                {
+                    SQLCmd.ExecuteNonQuery();
+                }
+                _Conn.Close();
+            }
+            catch (SqlException ex) { throw ex; }
+            finally { _Conn.Dispose(); }
+        }
+
         internal Customer GetCustomersById(int Customer_Id)
         {
             Customer Customers = new Customer();

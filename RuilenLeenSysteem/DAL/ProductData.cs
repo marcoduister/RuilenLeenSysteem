@@ -22,6 +22,7 @@ namespace RuilenLeenSysteem.DAL
         public List<Product> GetAllProducts()
         {
             List<Product> ListOfProducts = new List<Product>();
+            _Conn = new SqlConnection(ConnectionString);
             using (_Conn)
             {
                 SqlCommand SQLCmd = new SqlCommand($"Select * From Product", _Conn);
@@ -47,6 +48,55 @@ namespace RuilenLeenSysteem.DAL
                 }
             }
             return ListOfProducts;
+        }
+
+        internal void EditStatus(int product_id, Status Status)
+        {
+            _Conn = new SqlConnection(ConnectionString);
+            try
+            {
+                _Conn.Open();
+
+                String SQLString = $"UPDATE Product SET " +
+                    $"Status = {(int)Status}" +
+                    $"WHERE Id = {product_id};";
+
+                using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
+                {
+                    SQLCmd.ExecuteNonQuery();
+                }
+                _Conn.Close();
+            }
+            catch (SqlException ex) { throw ex; }
+            finally { _Conn.Dispose(); }
+        }
+
+        internal bool ExistProductById(int product_id)
+        {
+            bool ProductExist = false;
+            _Conn = new SqlConnection(ConnectionString);
+            try
+            {
+                using (_Conn)
+                {
+                    SqlCommand SQLCmd = new SqlCommand($"Select * From [Product] where Id= '{product_id}' COLLATE SQL_Latin1_General_CP1_CS_AS", _Conn);
+                    _Conn.Open();
+                    using (SqlDataReader oReader = SQLCmd.ExecuteReader())
+                    {
+                        if (oReader.HasRows)
+                        {
+                            ProductExist = true;
+                        }
+                        else
+                        {
+                            ProductExist = false;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+            finally { _Conn.Dispose(); }
+            return ProductExist;
         }
 
         internal List<Product> GetAllProductsByType(Type type)
@@ -79,6 +129,7 @@ namespace RuilenLeenSysteem.DAL
         public Product GetProductById(int Id)
         {
             Product product = new Product();
+            _Conn = new SqlConnection(ConnectionString);
             using (_Conn)
             {
                 SqlCommand SQLCmd = new SqlCommand($"Select * From Product where Id ='{Id}'", _Conn);
@@ -89,12 +140,10 @@ namespace RuilenLeenSysteem.DAL
                     {
                         product.Id = Int32.Parse(oReader["Id"].ToString());
                         product.Name = oReader["Name"].ToString();
-                        product.Description = oReader["Desctiption"].ToString();
-                        product.Points = Int32.Parse(oReader["Worth"].ToString());
+                        product.Description = oReader["Description"].ToString();
+                        product.Points = Int32.Parse(oReader["points"].ToString());
                         product.Status = (Status)Int32.Parse(oReader["Status"].ToString());
                         product.Type = (Type)Int32.Parse(oReader["Type"].ToString());
-                        product.Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString());
-                        product.Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString());
                     }
                     _Conn.Close();
                 }
@@ -104,6 +153,7 @@ namespace RuilenLeenSysteem.DAL
 
         public void DeleteProduct(int Id)
         {
+            _Conn = new SqlConnection(ConnectionString);
             using (_Conn)
             {
                 SqlCommand SQLCmd = new SqlCommand($"Delete From Product where Id ='{Id}'", _Conn);
@@ -125,6 +175,7 @@ namespace RuilenLeenSysteem.DAL
 
         public void AddProduct(Product product)
         {
+            _Conn = new SqlConnection(ConnectionString);
             using (_Conn)
             {
                 // Idk of deze query et doet        #TODO
@@ -147,6 +198,7 @@ namespace RuilenLeenSysteem.DAL
 
         public void EdidtProduct(Product product)
         {
+            _Conn = new SqlConnection(ConnectionString);
             using (_Conn)
             {
                 // Idk of deze query et doet        #TODO

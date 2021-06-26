@@ -32,6 +32,7 @@ namespace RuilenLeenSysteem.BUS
             return ReturnCustomer;
             
         }
+
         internal Customer GetReadCustomersById(int Id)
         {
             Customer ReturnCustomer = new Customer();
@@ -100,5 +101,6 @@ namespace RuilenLeenSysteem.BUS
 
             return Deleted;
         }
+    
     }
 }

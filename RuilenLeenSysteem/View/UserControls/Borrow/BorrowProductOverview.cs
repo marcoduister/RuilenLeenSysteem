@@ -25,9 +25,9 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
 
         private void BorrowProductOverview_Load(object sender, EventArgs e)
         {
-            List<Product> BorrowProductList = _ProductControlle.GetAllProductsByType(Type.borrow);
+            List<Product> BorrowProductList = _ProductControlle.GetAllProductsByType(Type.Borrow);
 
-            foreach (var product in BorrowProductList)
+            foreach (var product in BorrowProductList.Where(A =>A.Status == Model.Status.InStock))
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(Dgv_BorrowProductOverview);

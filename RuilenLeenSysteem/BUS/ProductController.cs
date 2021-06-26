@@ -19,5 +19,15 @@ namespace RuilenLeenSysteem.BUS
         {
             return _DbData.GetAllProductsByType(Type);
         }
+
+        internal Product GetProductById(int product_id)
+        {
+            Product Product = new Product();
+            if (_DbData.ExistProductById(product_id))
+            {
+                Product = _DbData.GetProductById(product_id);
+            }
+            return Product;
+        }
     }
 }
