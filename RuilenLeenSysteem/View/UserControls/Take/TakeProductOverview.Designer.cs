@@ -39,7 +39,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             // 
             // Txt_TakeProductSearch
             // 
-            this.Txt_TakeProductSearch.Location = new System.Drawing.Point(638, 110);
+            this.Txt_TakeProductSearch.Location = new System.Drawing.Point(638, 139);
             this.Txt_TakeProductSearch.Name = "Txt_TakeProductSearch";
             this.Txt_TakeProductSearch.Size = new System.Drawing.Size(197, 22);
             this.Txt_TakeProductSearch.TabIndex = 27;
@@ -49,12 +49,13 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Dgv_TakeProductOverview.AllowUserToAddRows = false;
             this.Dgv_TakeProductOverview.AllowUserToDeleteRows = false;
             this.Dgv_TakeProductOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_TakeProductOverview.Location = new System.Drawing.Point(57, 215);
+            this.Dgv_TakeProductOverview.Location = new System.Drawing.Point(57, 167);
             this.Dgv_TakeProductOverview.Name = "Dgv_TakeProductOverview";
             this.Dgv_TakeProductOverview.RowHeadersWidth = 51;
             this.Dgv_TakeProductOverview.RowTemplate.Height = 24;
-            this.Dgv_TakeProductOverview.Size = new System.Drawing.Size(778, 309);
+            this.Dgv_TakeProductOverview.Size = new System.Drawing.Size(778, 357);
             this.Dgv_TakeProductOverview.TabIndex = 26;
+            this.Dgv_TakeProductOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_TakeProductOverview_CellContentClick);
             // 
             // Label1
             // 
@@ -69,7 +70,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             // Btn_TakeProduct
             // 
             this.Btn_TakeProduct.Image = ((System.Drawing.Image)(resources.GetObject("Btn_TakeProduct.Image")));
-            this.Btn_TakeProduct.Location = new System.Drawing.Point(57, 98);
+            this.Btn_TakeProduct.Location = new System.Drawing.Point(57, 68);
             this.Btn_TakeProduct.Name = "Btn_TakeProduct";
             this.Btn_TakeProduct.Size = new System.Drawing.Size(110, 93);
             this.Btn_TakeProduct.TabIndex = 76;

@@ -31,6 +31,12 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
         {
             this.Txt_TradeProductSearch = new System.Windows.Forms.TextBox();
             this.Dgv_TradeProductOverview = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Ruilen = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeProductOverview)).BeginInit();
             this.SuspendLayout();
@@ -47,12 +53,66 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
             this.Dgv_TradeProductOverview.AllowUserToAddRows = false;
             this.Dgv_TradeProductOverview.AllowUserToDeleteRows = false;
             this.Dgv_TradeProductOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_TradeProductOverview.Location = new System.Drawing.Point(63, 237);
+            this.Dgv_TradeProductOverview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Name,
+            this.Description,
+            this.Points,
+            this.Status,
+            this.btn_Ruilen});
+            this.Dgv_TradeProductOverview.Location = new System.Drawing.Point(63, 147);
             this.Dgv_TradeProductOverview.Name = "Dgv_TradeProductOverview";
             this.Dgv_TradeProductOverview.RowHeadersWidth = 51;
             this.Dgv_TradeProductOverview.RowTemplate.Height = 24;
-            this.Dgv_TradeProductOverview.Size = new System.Drawing.Size(775, 283);
+            this.Dgv_TradeProductOverview.Size = new System.Drawing.Size(775, 373);
             this.Dgv_TradeProductOverview.TabIndex = 20;
+            this.Dgv_TradeProductOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_TradeProductOverview_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Naam";
+            this.Name.MinimumWidth = 6;
+            this.Name.Name = "Name";
+            this.Name.Width = 125;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Beschijving";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.Width = 125;
+            // 
+            // Points
+            // 
+            this.Points.HeaderText = "punten";
+            this.Points.MinimumWidth = 6;
+            this.Points.Name = "Points";
+            this.Points.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 125;
+            // 
+            // btn_Ruilen
+            // 
+            this.btn_Ruilen.HeaderText = "Ruilen";
+            this.btn_Ruilen.MinimumWidth = 6;
+            this.btn_Ruilen.Name = "btn_Ruilen";
+            this.btn_Ruilen.Text = "Ruilen";
+            this.btn_Ruilen.UseColumnTextForButtonValue = true;
+            this.btn_Ruilen.Width = 125;
             // 
             // Label1
             // 
@@ -71,8 +131,8 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
             this.Controls.Add(this.Txt_TradeProductSearch);
             this.Controls.Add(this.Dgv_TradeProductOverview);
             this.Controls.Add(this.Label1);
-            this.Name = "TradeOverview";
             this.Size = new System.Drawing.Size(895, 554);
+            this.Load += new System.EventHandler(this.TradeOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeProductOverview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -84,5 +144,11 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
         private System.Windows.Forms.TextBox Txt_TradeProductSearch;
         private System.Windows.Forms.DataGridView Dgv_TradeProductOverview;
         private System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Points;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Ruilen;
     }
 }

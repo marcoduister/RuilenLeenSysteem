@@ -35,7 +35,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Btn_CustomerAdd = new System.Windows.Forms.Button();
             this.Lbl_Customer = new System.Windows.Forms.Label();
             this.Dgv_CustomerOverview = new System.Windows.Forms.DataGridView();
-            this.Txt_CustomerSearch = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +43,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.btn_Read = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Txt_CustomerSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_CustomerOverview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             // Btn_CustomerAdd
             // 
             this.Btn_CustomerAdd.Image = ((System.Drawing.Image)(resources.GetObject("Btn_CustomerAdd.Image")));
-            this.Btn_CustomerAdd.Location = new System.Drawing.Point(60, 85);
+            this.Btn_CustomerAdd.Location = new System.Drawing.Point(60, 78);
             this.Btn_CustomerAdd.Name = "Btn_CustomerAdd";
             this.Btn_CustomerAdd.Size = new System.Drawing.Size(110, 93);
             this.Btn_CustomerAdd.TabIndex = 6;
@@ -89,20 +89,13 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.btn_Read,
             this.btn_Edit,
             this.btn_Delete});
-            this.Dgv_CustomerOverview.Location = new System.Drawing.Point(60, 184);
+            this.Dgv_CustomerOverview.Location = new System.Drawing.Point(60, 177);
             this.Dgv_CustomerOverview.Name = "Dgv_CustomerOverview";
             this.Dgv_CustomerOverview.RowHeadersWidth = 51;
             this.Dgv_CustomerOverview.RowTemplate.Height = 24;
-            this.Dgv_CustomerOverview.Size = new System.Drawing.Size(775, 337);
+            this.Dgv_CustomerOverview.Size = new System.Drawing.Size(775, 344);
             this.Dgv_CustomerOverview.TabIndex = 8;
             this.Dgv_CustomerOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CustomerOverview_CellContentClick);
-            // 
-            // Txt_CustomerSearch
-            // 
-            this.Txt_CustomerSearch.Location = new System.Drawing.Point(638, 156);
-            this.Txt_CustomerSearch.Name = "Txt_CustomerSearch";
-            this.Txt_CustomerSearch.Size = new System.Drawing.Size(197, 22);
-            this.Txt_CustomerSearch.TabIndex = 9;
             // 
             // Id
             // 
@@ -166,6 +159,13 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.btn_Delete.Text = "Verwijder";
             this.btn_Delete.UseColumnTextForButtonValue = true;
             this.btn_Delete.Width = 125;
+            // 
+            // Txt_CustomerSearch
+            // 
+            this.Txt_CustomerSearch.Location = new System.Drawing.Point(638, 149);
+            this.Txt_CustomerSearch.Name = "Txt_CustomerSearch";
+            this.Txt_CustomerSearch.Size = new System.Drawing.Size(197, 22);
+            this.Txt_CustomerSearch.TabIndex = 9;
             // 
             // CustomerOverview
             // 

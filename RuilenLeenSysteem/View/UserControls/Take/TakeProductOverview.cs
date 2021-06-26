@@ -24,5 +24,10 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             Page.Dock = DockStyle.Fill;
             this.Controls.Add(Page);
         }
+
+        private void Dgv_TakeProductOverview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

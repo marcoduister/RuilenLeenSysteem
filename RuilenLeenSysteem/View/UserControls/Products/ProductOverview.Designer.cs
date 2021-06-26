@@ -39,7 +39,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             // 
             // Txt_ProductSearch
             // 
-            this.Txt_ProductSearch.Location = new System.Drawing.Point(641, 119);
+            this.Txt_ProductSearch.Location = new System.Drawing.Point(641, 148);
             this.Txt_ProductSearch.Name = "Txt_ProductSearch";
             this.Txt_ProductSearch.Size = new System.Drawing.Size(197, 22);
             this.Txt_ProductSearch.TabIndex = 17;
@@ -49,11 +49,11 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Dgv_ProductOverview.AllowUserToAddRows = false;
             this.Dgv_ProductOverview.AllowUserToDeleteRows = false;
             this.Dgv_ProductOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_ProductOverview.Location = new System.Drawing.Point(63, 237);
+            this.Dgv_ProductOverview.Location = new System.Drawing.Point(63, 176);
             this.Dgv_ProductOverview.Name = "Dgv_ProductOverview";
             this.Dgv_ProductOverview.RowHeadersWidth = 51;
             this.Dgv_ProductOverview.RowTemplate.Height = 24;
-            this.Dgv_ProductOverview.Size = new System.Drawing.Size(775, 283);
+            this.Dgv_ProductOverview.Size = new System.Drawing.Size(775, 344);
             this.Dgv_ProductOverview.TabIndex = 16;
             // 
             // Label1
@@ -69,7 +69,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             // Btn_ProductAdd
             // 
             this.Btn_ProductAdd.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ProductAdd.Image")));
-            this.Btn_ProductAdd.Location = new System.Drawing.Point(63, 119);
+            this.Btn_ProductAdd.Location = new System.Drawing.Point(63, 77);
             this.Btn_ProductAdd.Name = "Btn_ProductAdd";
             this.Btn_ProductAdd.Size = new System.Drawing.Size(110, 93);
             this.Btn_ProductAdd.TabIndex = 14;

@@ -32,6 +32,12 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Txt_BorrowProductSearch = new System.Windows.Forms.TextBox();
             this.Dgv_BorrowProductOverview = new System.Windows.Forms.DataGridView();
             this.Label1 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Borrow = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_BorrowProductOverview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,12 +53,20 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Dgv_BorrowProductOverview.AllowUserToAddRows = false;
             this.Dgv_BorrowProductOverview.AllowUserToDeleteRows = false;
             this.Dgv_BorrowProductOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_BorrowProductOverview.Location = new System.Drawing.Point(60, 228);
+            this.Dgv_BorrowProductOverview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Name,
+            this.Description,
+            this.Points,
+            this.Status,
+            this.btn_Borrow});
+            this.Dgv_BorrowProductOverview.Location = new System.Drawing.Point(60, 138);
             this.Dgv_BorrowProductOverview.Name = "Dgv_BorrowProductOverview";
             this.Dgv_BorrowProductOverview.RowHeadersWidth = 51;
             this.Dgv_BorrowProductOverview.RowTemplate.Height = 24;
-            this.Dgv_BorrowProductOverview.Size = new System.Drawing.Size(775, 283);
+            this.Dgv_BorrowProductOverview.Size = new System.Drawing.Size(775, 373);
             this.Dgv_BorrowProductOverview.TabIndex = 23;
+            this.Dgv_BorrowProductOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_BorrowProductOverview_CellContentClick);
             // 
             // Label1
             // 
@@ -64,6 +78,52 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Label1.TabIndex = 22;
             this.Label1.Text = "Lenen";
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Naam";
+            this.Name.MinimumWidth = 6;
+            this.Name.Name = "Name";
+            this.Name.Width = 125;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Beschijving";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.Width = 125;
+            // 
+            // Points
+            // 
+            this.Points.HeaderText = "punten";
+            this.Points.MinimumWidth = 6;
+            this.Points.Name = "Points";
+            this.Points.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 125;
+            // 
+            // btn_Borrow
+            // 
+            this.btn_Borrow.HeaderText = "Uitlenen";
+            this.btn_Borrow.MinimumWidth = 6;
+            this.btn_Borrow.Name = "btn_Borrow";
+            this.btn_Borrow.Text = "Uitlenen";
+            this.btn_Borrow.UseColumnTextForButtonValue = true;
+            this.btn_Borrow.Width = 125;
+            // 
             // BorrowProductOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -71,7 +131,6 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Controls.Add(this.Txt_BorrowProductSearch);
             this.Controls.Add(this.Dgv_BorrowProductOverview);
             this.Controls.Add(this.Label1);
-            this.Name = "BorrowProductOverview";
             this.Size = new System.Drawing.Size(895, 554);
             this.Load += new System.EventHandler(this.BorrowProductOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_BorrowProductOverview)).EndInit();
@@ -85,5 +144,11 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
         private System.Windows.Forms.TextBox Txt_BorrowProductSearch;
         private System.Windows.Forms.DataGridView Dgv_BorrowProductOverview;
         private System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Points;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Borrow;
     }
 }

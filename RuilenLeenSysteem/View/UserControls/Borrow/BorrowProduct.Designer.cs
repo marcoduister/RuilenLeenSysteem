@@ -175,6 +175,7 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Controls.Add(this.Label1);
             this.Name = "BorrowProduct";
             this.Size = new System.Drawing.Size(895, 554);
+            this.Load += new System.EventHandler(this.BorrowProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

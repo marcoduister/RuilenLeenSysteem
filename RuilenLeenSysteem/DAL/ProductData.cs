@@ -49,64 +49,31 @@ namespace RuilenLeenSysteem.DAL
             return ListOfProducts;
         }
 
-        public List<Product> GetAllTradeProducts()
+        internal List<Product> GetAllProductsByType(Type type)
         {
-            List<Product> ListOfTradeProducts = new List<Product>();
+            List<Product> ListOfProducts = new List<Product>();
             using (_Conn)
             {
-                SqlCommand SQLCmd = new SqlCommand($"Select * From Product where Type ='2'", _Conn);
+                SqlCommand SQLCmd = new SqlCommand($"Select * From Product where Type ={(int)type}", _Conn);
                 _Conn.Open();
                 using (SqlDataReader oReader = SQLCmd.ExecuteReader())
                 {
                     while (oReader.Read())
                     {
-                        Product TempTradeProduct = new Product()
+                        Product _Product = new Product()
                         {
                             Id = Int32.Parse(oReader["Id"].ToString()),
                             Name = oReader["Name"].ToString(),
-                            Description = oReader["Desctiption"].ToString(),
-                            Points = Int32.Parse(oReader["worth"].ToString()),
+                            Description = oReader["Description"].ToString(),
+                            Points = Int32.Parse(oReader["Points"].ToString()),
                             Status = (Status)Int32.Parse(oReader["Status"].ToString()),
-                            Type = (Type)Int32.Parse(oReader["Type"].ToString()),
-                            Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString()),
-                            Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString()),
                         };
-                        ListOfTradeProducts.Add(TempTradeProduct);
+                        ListOfProducts.Add(_Product);
                     }
                     _Conn.Close();
                 }
             }
-            return ListOfTradeProducts;
-        }
-
-        public List<Product> GetAllBorrowProducts()
-        {
-            List<Product> ListOfBorrowProducts = new List<Product>();
-            using (_Conn)
-            {
-                SqlCommand SQLCmd = new SqlCommand($"Select * From Product where Type ='2'", _Conn);
-                _Conn.Open();
-                using (SqlDataReader oReader = SQLCmd.ExecuteReader())
-                {
-                    while (oReader.Read())
-                    {
-                        Product TempBorrowProduct = new Product()
-                        {
-                            Id = Int32.Parse(oReader["Id"].ToString()),
-                            Name = oReader["Name"].ToString(),
-                            Description = oReader["Desctiption"].ToString(),
-                            Points = Int32.Parse(oReader["worth"].ToString()),
-                            Status = (Status)Int32.Parse(oReader["Status"].ToString()),
-                            Type = (Type)Int32.Parse(oReader["Type"].ToString()),
-                            Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString()),
-                            Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString()),
-                        };
-                        ListOfBorrowProducts.Add(TempBorrowProduct);
-                    }
-                    _Conn.Close();
-                }
-            }
-            return ListOfBorrowProducts;
+            return ListOfProducts;
         }
 
         public Product GetProductById(int Id)
@@ -199,5 +166,7 @@ namespace RuilenLeenSysteem.DAL
                 _Conn.Close();
             }
         }
+
+
     }
 }

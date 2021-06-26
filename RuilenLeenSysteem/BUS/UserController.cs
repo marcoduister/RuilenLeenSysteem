@@ -25,12 +25,7 @@ namespace RuilenLeenSysteem.BUS
                 CurrentUser.UserName = "Beheerder";
                 CurrentUser.Password = "Qwerty3";
             }
-            bool LoggedIn = true; _UserData.VerifyAccount(CurrentUser);
-            if (LoggedIn && UserRoll == Roll.Admin)
-            {
-
-            }
-
+            bool LoggedIn = _UserData.VerifyAccount(CurrentUser);
             return LoggedIn;
         }
 

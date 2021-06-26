@@ -12,7 +12,7 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
 {
     public partial class Trading : UserControl
     {
-        public Trading()
+        public Trading(int product_id)
         {
             InitializeComponent();
         }

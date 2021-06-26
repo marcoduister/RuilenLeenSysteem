@@ -39,7 +39,7 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             // 
             // Txt_CategorieSearch
             // 
-            this.Txt_CategorieSearch.Location = new System.Drawing.Point(641, 119);
+            this.Txt_CategorieSearch.Location = new System.Drawing.Point(641, 148);
             this.Txt_CategorieSearch.Name = "Txt_CategorieSearch";
             this.Txt_CategorieSearch.Size = new System.Drawing.Size(197, 22);
             this.Txt_CategorieSearch.TabIndex = 13;
@@ -49,11 +49,11 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Dgv_CustomerOverview.AllowUserToAddRows = false;
             this.Dgv_CustomerOverview.AllowUserToDeleteRows = false;
             this.Dgv_CustomerOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_CustomerOverview.Location = new System.Drawing.Point(63, 237);
+            this.Dgv_CustomerOverview.Location = new System.Drawing.Point(63, 176);
             this.Dgv_CustomerOverview.Name = "Dgv_CustomerOverview";
             this.Dgv_CustomerOverview.RowHeadersWidth = 51;
             this.Dgv_CustomerOverview.RowTemplate.Height = 24;
-            this.Dgv_CustomerOverview.Size = new System.Drawing.Size(775, 283);
+            this.Dgv_CustomerOverview.Size = new System.Drawing.Size(775, 344);
             this.Dgv_CustomerOverview.TabIndex = 12;
             // 
             // Lbl_Customer
@@ -69,7 +69,7 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             // Btn_CategorieAdd
             // 
             this.Btn_CategorieAdd.Image = ((System.Drawing.Image)(resources.GetObject("Btn_CategorieAdd.Image")));
-            this.Btn_CategorieAdd.Location = new System.Drawing.Point(63, 119);
+            this.Btn_CategorieAdd.Location = new System.Drawing.Point(63, 77);
             this.Btn_CategorieAdd.Name = "Btn_CategorieAdd";
             this.Btn_CategorieAdd.Size = new System.Drawing.Size(110, 93);
             this.Btn_CategorieAdd.TabIndex = 10;
