@@ -11,7 +11,7 @@ namespace RuilenLeenSysteem.Model
         // Property / Attributes
         public int Id { get; set; }
         public DateTime Start_date { get; set; }
-        public DateTime Eind_date { get; set; }
+        public DateTime End_Date { get; set; }
 
         // Relationships
         public int Product_id { get; set; }

@@ -40,7 +40,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
                 row.Cells[0].Value = Borrow.Product.Name;
                 row.Cells[1].Value = Borrow.Product.Points;
                 row.Cells[2].Value = Borrow.Start_date.ToString();
-                row.Cells[2].Value = Borrow.Eind_date.ToString();
+                row.Cells[2].Value = Borrow.End_Date.ToString();
 
                 Dgv_BorrowView.Rows.Add(row);
             }

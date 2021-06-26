@@ -41,8 +41,8 @@ namespace RuilenLeenSysteem.DAL
 
                         BorrowOrder TempCustomer = new BorrowOrder()
                         {
-                            Start_date = DateTime.Parse(oReader["Start_date"].ToString()),
-                            Eind_date = DateTime.Parse(oReader["Eind_date"].ToString()),
+                            Start_date = DateTime.Parse(oReader["Start_Date"].ToString()),
+                            End_Date = DateTime.Parse(oReader["End_Date"].ToString()),
                             Product = tmpproduct,
                         };
 
@@ -120,7 +120,7 @@ namespace RuilenLeenSysteem.DAL
                 String SQLString = $"INSERT INTO [BorrowOrder]" +
                     $"([Start_Date],[End_Date],[Product_Id],[Customer_Id])" +
                     $"VALUES('{BorrowOrder.Start_date.ToString("yyyy/MM/dd")}', " +
-                    $"'{BorrowOrder.Eind_date.ToString("yyyy/MM/dd")}', {BorrowOrder.Product_id}, {BorrowOrder.Customer_id})";
+                    $"'{BorrowOrder.End_Date.ToString("yyyy/MM/dd")}', {BorrowOrder.Product_id}, {BorrowOrder.Customer_id})";
 
                 using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
                 {

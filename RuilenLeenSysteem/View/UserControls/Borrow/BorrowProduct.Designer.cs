@@ -33,8 +33,6 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Cbx_BorrowProductEndDate = new System.Windows.Forms.ComboBox();
-            this.Cbx_BorrowProductStartDate = new System.Windows.Forms.ComboBox();
             this.Txt_BorrowProductName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +43,8 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Txt_BorrowProductPoints = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Btn_Cancel = new System.Windows.Forms.Button();
+            this.Dtp_BorrowProductStartDate = new System.Windows.Forms.DateTimePicker();
+            this.Dtp_BorrowProductEndDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // Label1
@@ -76,22 +76,6 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.label4.Size = new System.Drawing.Size(140, 23);
             this.label4.TabIndex = 70;
             this.label4.Text = "Begin datum:";
-            // 
-            // Cbx_BorrowProductEndDate
-            // 
-            this.Cbx_BorrowProductEndDate.FormattingEnabled = true;
-            this.Cbx_BorrowProductEndDate.Location = new System.Drawing.Point(411, 289);
-            this.Cbx_BorrowProductEndDate.Name = "Cbx_BorrowProductEndDate";
-            this.Cbx_BorrowProductEndDate.Size = new System.Drawing.Size(168, 24);
-            this.Cbx_BorrowProductEndDate.TabIndex = 69;
-            // 
-            // Cbx_BorrowProductStartDate
-            // 
-            this.Cbx_BorrowProductStartDate.FormattingEnabled = true;
-            this.Cbx_BorrowProductStartDate.Location = new System.Drawing.Point(411, 248);
-            this.Cbx_BorrowProductStartDate.Name = "Cbx_BorrowProductStartDate";
-            this.Cbx_BorrowProductStartDate.Size = new System.Drawing.Size(168, 24);
-            this.Cbx_BorrowProductStartDate.TabIndex = 68;
             // 
             // Txt_BorrowProductName
             // 
@@ -191,10 +175,26 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
+            // Dtp_BorrowProductStartDate
+            // 
+            this.Dtp_BorrowProductStartDate.Location = new System.Drawing.Point(411, 247);
+            this.Dtp_BorrowProductStartDate.Name = "Dtp_BorrowProductStartDate";
+            this.Dtp_BorrowProductStartDate.Size = new System.Drawing.Size(168, 22);
+            this.Dtp_BorrowProductStartDate.TabIndex = 79;
+            // 
+            // Dtp_BorrowProductEndDate
+            // 
+            this.Dtp_BorrowProductEndDate.Location = new System.Drawing.Point(411, 288);
+            this.Dtp_BorrowProductEndDate.Name = "Dtp_BorrowProductEndDate";
+            this.Dtp_BorrowProductEndDate.Size = new System.Drawing.Size(168, 22);
+            this.Dtp_BorrowProductEndDate.TabIndex = 80;
+            // 
             // BorrowProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Dtp_BorrowProductEndDate);
+            this.Controls.Add(this.Dtp_BorrowProductStartDate);
             this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Txt_BorrowProductPoints);
@@ -204,8 +204,6 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Controls.Add(this.Cbx_BorrowProductCustomer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Cbx_BorrowProductEndDate);
-            this.Controls.Add(this.Cbx_BorrowProductStartDate);
             this.Controls.Add(this.Txt_BorrowProductName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -223,8 +221,6 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox Cbx_BorrowProductEndDate;
-        private System.Windows.Forms.ComboBox Cbx_BorrowProductStartDate;
         private System.Windows.Forms.TextBox Txt_BorrowProductName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -235,5 +231,7 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
         private System.Windows.Forms.TextBox Txt_BorrowProductPoints;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button Btn_Cancel;
+        private System.Windows.Forms.DateTimePicker Dtp_BorrowProductStartDate;
+        private System.Windows.Forms.DateTimePicker Dtp_BorrowProductEndDate;
     }
 }

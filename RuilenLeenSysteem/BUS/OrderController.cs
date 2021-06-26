@@ -42,7 +42,7 @@ namespace RuilenLeenSysteem.BUS
 
                         _OrderDbData.AddTradeOrder(AddTradeOrder);
                         _ProductDbData.EditStatus(product_id, Status.Sold);
-                        _CustomerDbData.PointsExchange(customer_id, points);
+                        _CustomerDbData.PointsExchange(customer_id, Customer.balance);
                         created = true;
                     }
                 }
@@ -50,7 +50,7 @@ namespace RuilenLeenSysteem.BUS
             return created;
         }
 
-        internal bool AddBorrowOrder(int product_id, int customer_id, int points)
+        internal bool AddBorrowOrder(int product_id, int customer_id, int points, DateTime start, DateTime Eind)
         {
             bool created = false;
             if (_ProductDbData.ExistProductById(product_id))
@@ -65,13 +65,13 @@ namespace RuilenLeenSysteem.BUS
                         {
                             Product_id = product_id,
                             Customer_id = customer_id,
-                            Start_date = DateTime.Now,
-                            Eind_date = DateTime.Now
+                            Start_date = start,
+                            End_Date = Eind,
                         };
 
                         _OrderDbData.AddBorrowOrder(AddBorrowOrder);
-                        _ProductDbData.EditStatus(product_id, Status.Sold);
-                        _CustomerDbData.PointsExchange(customer_id, points);
+                        _ProductDbData.EditStatus(product_id, Status.Loaned);
+                        _CustomerDbData.PointsExchange(customer_id, Customer.balance);
                         created = true;
                     }
                 }
