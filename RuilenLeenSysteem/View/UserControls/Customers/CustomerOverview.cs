@@ -31,7 +31,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
 
         private void CustomerOverview_Load(object sender, EventArgs e)
         {
-            List<Customer> CustomerList = _CustomerControlle.GetAllCustomers();
+            List<Customer> CustomerList = _CustomerController.GetAllCustomers();
 
             foreach (var Customer in CustomerList)
             {
