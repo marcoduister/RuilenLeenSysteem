@@ -29,5 +29,10 @@ namespace RuilenLeenSysteem.BUS
             }
             return Product;
         }
+
+        internal void AddProduct(Product product)
+        {
+            _DbData.AddProduct(product);
+        }
     }
 }
