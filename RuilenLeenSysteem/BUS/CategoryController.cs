@@ -11,6 +11,7 @@ namespace RuilenLeenSysteem.BUS
     {
         internal List<Categorie> GetAllCategories()
         {
+
             throw new NotImplementedException();
         }
     }

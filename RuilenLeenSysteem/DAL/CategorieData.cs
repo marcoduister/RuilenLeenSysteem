@@ -18,9 +18,31 @@ namespace RuilenLeenSysteem.DAL
          * All functions for data handling for the categorie are below
          */
 
-        public void GetAllCategories()
+        public List<Categorie> GetAllCategories()
         {
-
+            List<Categorie> ListOfCategorie = new List<Categorie>();
+            _Conn = new SqlConnection(ConnectionString);
+            using (_Conn)
+            {
+                SqlCommand SQLCmd = new SqlCommand($"Select * From Categorie", _Conn);
+                _Conn.Open();
+                using (SqlDataReader oReader = SQLCmd.ExecuteReader())
+                {
+                    while (oReader.Read())
+                    {
+                        Categorie TempCategorie = new Categorie()
+                        {
+                            Id = Int32.Parse(oReader["Id"].ToString()),
+                            Name = oReader["Name"].ToString(),
+                            Description = oReader["Desctiption"].ToString(),
+                            Created_date = DateTime.Parse(oReader["Created_Date"].ToString()),
+                        };
+                        ListOfCategorie.Add(TempCategorie);
+                    }
+                    _Conn.Close();
+                }
+            }
+            return ListOfCategorie;
 
         }
 

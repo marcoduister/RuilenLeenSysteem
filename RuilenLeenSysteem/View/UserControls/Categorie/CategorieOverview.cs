@@ -34,29 +34,55 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
 
         private void CategorieOverview_Load(object sender, EventArgs e)
         {
-            List<Model.Categorie> CategoryList = _CategoryController.GetAllCategories(); //afleiden van klanten
+            List<Model.Categorie> CategoryList = _CategoryController.GetAllCategories();
 
             foreach (var Category in CategoryList)
             {
                 DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(Dgv_CustomerOverview);
-                row.Cells[0].Value = Customer.Id;
-                row.Cells[1].Value = Customer.FirstName; //aanpassen naar category
-                row.Cells[2].Value = Customer.LastName;
-                row.Cells[3].Value = Customer.Email;
-                row.Cells[4].Value = Customer.BlackList;
+                row.CreateCells(dataGridView1);
+                row.Cells[0].Value = Category.Id;
+                row.Cells[1].Value = Category.Name;
+                row.Cells[2].Value = Category.Created_date;
 
-                Dgv_CustomerOverview.Rows.Add(row);
+                dataGridView1.Rows.Add(row);
 
             }
         }
 
-        private void Dgv_CustomerOverview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "   btn_Read")
+            {
+                
+               //MessageBox.Show();
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_Edit")
+            {
+                this.Controls.Clear();
+                CustomerEdit uc = new CustomerEdit(Customer_id);
+                uc.Dock = DockStyle.Fill;
+                this.Controls.Add(uc);
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_Delete")
+            {
+                DialogResult dialogResult = MessageBox.Show("Weet uw zekker dat uw deze klant wilt verwijderen", "Klant verwijderen", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (_CustomerControlle.DelteCustomer(Customer_id))
+                    {
+                        MessageBox.Show("uw heeft een klant verwijdered");
+                    }
+                    else
+                    {
+                        MessageBox.Show("er is iets fout gedaan probeer het later opnieuw !!!! ");
+                    }
+                }
+            }
 
         }
 
-        private void Dgv_CustomerOverview_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

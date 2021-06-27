@@ -31,14 +31,16 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategorieOverview));
             this.Txt_CategorieSearch = new System.Windows.Forms.TextBox();
-            this.Dgv_CustomerOverview = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Btn_Read = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Btn_Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Lbl_Customer = new System.Windows.Forms.Label();
             this.Btn_CategorieAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_CustomerOverview)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Naam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Read = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_CategorieSearch
@@ -47,59 +49,6 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Txt_CategorieSearch.Name = "Txt_CategorieSearch";
             this.Txt_CategorieSearch.Size = new System.Drawing.Size(197, 22);
             this.Txt_CategorieSearch.TabIndex = 13;
-            // 
-            // Dgv_CustomerOverview
-            // 
-            this.Dgv_CustomerOverview.AllowUserToAddRows = false;
-            this.Dgv_CustomerOverview.AllowUserToDeleteRows = false;
-            this.Dgv_CustomerOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_CustomerOverview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Name,
-            this.Btn_Read,
-            this.Btn_Edit});
-            this.Dgv_CustomerOverview.Location = new System.Drawing.Point(63, 176);
-            this.Dgv_CustomerOverview.Name = "Dgv_CustomerOverview";
-            this.Dgv_CustomerOverview.RowHeadersWidth = 51;
-            this.Dgv_CustomerOverview.RowTemplate.Height = 24;
-            this.Dgv_CustomerOverview.Size = new System.Drawing.Size(775, 344);
-            this.Dgv_CustomerOverview.TabIndex = 12;
-            this.Dgv_CustomerOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_CustomerOverview_CellContentClick_1);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
-            // 
-            // Btn_Read
-            // 
-            this.Btn_Read.HeaderText = "inzien";
-            this.Btn_Read.MinimumWidth = 6;
-            this.Btn_Read.Name = "Btn_Read";
-            this.Btn_Read.Text = "Inzien";
-            this.Btn_Read.UseColumnTextForButtonValue = true;
-            this.Btn_Read.Width = 125;
-            // 
-            // Btn_Edit
-            // 
-            this.Btn_Edit.HeaderText = "Bewerk";
-            this.Btn_Edit.MinimumWidth = 6;
-            this.Btn_Edit.Name = "Btn_Edit";
-            this.Btn_Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Btn_Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Btn_Edit.Text = "Bewerk";
-            this.Btn_Edit.UseColumnTextForButtonValue = true;
-            this.Btn_Edit.Width = 125;
             // 
             // Lbl_Customer
             // 
@@ -123,18 +72,85 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Btn_CategorieAdd.UseVisualStyleBackColor = true;
             this.Btn_CategorieAdd.Click += new System.EventHandler(this.Btn_CategorieAdd_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Naam,
+            this.Datum,
+            this.btn_Read,
+            this.btn_Edit,
+            this.btn_Delete});
+            this.dataGridView1.Location = new System.Drawing.Point(74, 190);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(775, 344);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // Naam
+            // 
+            this.Naam.HeaderText = "Name";
+            this.Naam.MinimumWidth = 6;
+            this.Naam.Name = "Naam";
+            this.Naam.Width = 125;
+            // 
+            // Datum
+            // 
+            this.Datum.HeaderText = "Date";
+            this.Datum.MinimumWidth = 6;
+            this.Datum.Name = "Datum";
+            this.Datum.Width = 125;
+            // 
+            // btn_Read
+            // 
+            this.btn_Read.HeaderText = "Inzien";
+            this.btn_Read.MinimumWidth = 6;
+            this.btn_Read.Name = "btn_Read";
+            this.btn_Read.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_Read.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_Read.Width = 125;
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.HeaderText = "Aanpassen";
+            this.btn_Edit.MinimumWidth = 6;
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_Edit.Width = 125;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.HeaderText = "Verwijderen";
+            this.btn_Delete.MinimumWidth = 6;
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_Delete.Width = 125;
+            // 
             // CategorieOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Txt_CategorieSearch);
-            this.Controls.Add(this.Dgv_CustomerOverview);
             this.Controls.Add(this.Lbl_Customer);
             this.Controls.Add(this.Btn_CategorieAdd);
             this.Name = "CategorieOverview";
             this.Size = new System.Drawing.Size(895, 554);
             this.Load += new System.EventHandler(this.CategorieOverview_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_CustomerOverview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,12 +159,14 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
         #endregion
 
         private System.Windows.Forms.TextBox Txt_CategorieSearch;
-        private System.Windows.Forms.DataGridView Dgv_CustomerOverview;
         private System.Windows.Forms.Label Lbl_Customer;
         private System.Windows.Forms.Button Btn_CategorieAdd;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewButtonColumn Btn_Read;
-        private System.Windows.Forms.DataGridViewButtonColumn Btn_Edit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Read;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Delete;
     }
 }
