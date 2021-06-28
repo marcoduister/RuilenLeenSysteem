@@ -61,23 +61,31 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
 
         private void Btn_ProductEdit_Click(object sender, EventArgs e)
         {
-            if (Cbx_BorrowProductCustomer.SelectedValue.ToString() != null)
+            if (Cbx_ContractCheck.Checked)
             {
-                int Customer_id = int.Parse(Cbx_BorrowProductCustomer.SelectedValue.ToString());
-                if (_OrderController.AddBorrowOrder(_Product_id, Customer_id, int.Parse(Txt_BorrowProductPoints.Text)))
+                if (Cbx_BorrowProductCustomer.SelectedValue.ToString() != null)
                 {
-                    MessageBox.Show("Uw heeft zo juist een product Uitgeleend");
-                    Btn_Cancel_Click(null, null);
+                    int Customer_id = int.Parse(Cbx_BorrowProductCustomer.SelectedValue.ToString());
+                    if (_OrderController.AddBorrowOrder(_Product_id, Customer_id, int.Parse(Txt_BorrowProductPoints.Text), Dtp_BorrowProductStartDate.Value, Dtp_BorrowProductEndDate.Value))
+                    {
+                        MessageBox.Show("Uw heeft zo juist een product Uitgeleend");
+                        Btn_Cancel_Click(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Er is iets fout gegaan controleer uw saldo of probeer het later opnieuw!!! ");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Er is iets fout gegaan controleer uw saldo of probeer het later opnieuw!!! ");
+                    MessageBox.Show("Selecteer A.U.B een klant ");
                 }
             }
             else
             {
-                MessageBox.Show("Selecteer A.U.B een klant ");
+                MessageBox.Show("Onderteken het contract en vink het vinkje aan!!!");
             }
+            
         }
     }
 }

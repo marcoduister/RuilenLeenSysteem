@@ -24,7 +24,7 @@ namespace RuilenLeenSysteem.DAL
             _Conn = new SqlConnection(ConnectionString);
             using (_Conn)
             {
-                SqlCommand SQLCmd = new SqlCommand($"Select * From Categorie", _Conn);
+                SqlCommand SQLCmd = new SqlCommand($"Select * From Category", _Conn);
                 _Conn.Open();
                 using (SqlDataReader oReader = SQLCmd.ExecuteReader())
                 {
@@ -34,8 +34,9 @@ namespace RuilenLeenSysteem.DAL
                         {
                             Id = Int32.Parse(oReader["Id"].ToString()),
                             Name = oReader["Name"].ToString(),
-                            Description = oReader["Desctiption"].ToString(),
-                            Created_date = DateTime.Parse(oReader["Created_Date"].ToString()),
+                            Description = oReader["Description"].ToString(),
+                            Created_date = Convert.ToDateTime(oReader["Created_Date"].ToString()),
+
                         };
                         ListOfCategorie.Add(TempCategorie);
                     }
@@ -43,7 +44,6 @@ namespace RuilenLeenSysteem.DAL
                 }
             }
             return ListOfCategorie;
-
         }
 
         public void GetCategorieById()

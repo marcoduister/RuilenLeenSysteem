@@ -1,4 +1,5 @@
-﻿using RuilenLeenSysteem.Model;
+﻿using RuilenLeenSysteem.DAL;
+using RuilenLeenSysteem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,16 @@ namespace RuilenLeenSysteem.BUS
 {
     class CategoryController
     {
+        private CategorieData _DbData;
+        public CategoryController()
+        {
+            _DbData = new CategorieData();
+        }
+
         internal List<Categorie> GetAllCategories()
         {
-
-            throw new NotImplementedException();
+            return _DbData.GetAllCategories();
         }
+
     }
 }
