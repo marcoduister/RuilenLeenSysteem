@@ -39,13 +39,13 @@ namespace RuilenLeenSysteem.View.UserControls.Products
 
 
 
-            List<Model.Categorie> CategorieList = _CategoryController.GetAllCategories();
+            List<Category> CategorieList = _CategoryController.GetAllCategories();
 
             //this will fill the CustomerDrowDown
             FillCategorieDropDown(CategorieList, EditProduct.Categorie_id);
 
         }
-        private void FillCategorieDropDown(List<Model.Categorie> CategorieList,int category_id)
+        private void FillCategorieDropDown(List<Category> CategorieList,int category_id)
         {
             
             var Categorie = CategorieList.Select(A => new { Value = A.Id, Text = A.Name }).ToList();

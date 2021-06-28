@@ -40,10 +40,5 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             Page.Dock = DockStyle.Fill;
             this.Controls.Add(Page);
         }
-
-        private void CustomerAdd_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

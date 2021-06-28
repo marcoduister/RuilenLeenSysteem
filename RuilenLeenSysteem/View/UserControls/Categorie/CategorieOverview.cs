@@ -34,44 +34,40 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
 
         private void CategorieOverview_Load(object sender, EventArgs e)
         {
-            List<Model.Categorie> CategoryList = _CategoryController.GetAllCategories();
+            List<Category> CategoryList = _CategoryController.GetAllCategories();
 
             foreach (var Category in CategoryList)
             {
                 DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dataGridView1);
+                row.CreateCells(Dgv_Category);
                 row.Cells[0].Value = Category.Id;
                 row.Cells[1].Value = Category.Name;
-                row.Cells[2].Value = Category.Created_date;
+                row.Cells[2].Value = Category.Description;
 
-                dataGridView1.Rows.Add(row);
+                Dgv_Category.Rows.Add(row);
 
             }
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_Category_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int Category_id = int.Parse(Dgv_Category.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "   btn_Read")
-            {
-                
-               //MessageBox.Show();
-            }
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_Edit")
+            if (Dgv_Category.Columns[e.ColumnIndex].Name == "btn_Edit")
             {
                 this.Controls.Clear();
-                CustomerEdit uc = new CustomerEdit(Customer_id);
+                CategorieEdit uc = new CategorieEdit(Category_id);
                 uc.Dock = DockStyle.Fill;
                 this.Controls.Add(uc);
             }
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btn_Delete")
+            if (Dgv_Category.Columns[e.ColumnIndex].Name == "btn_Delete")
             {
                 DialogResult dialogResult = MessageBox.Show("Weet uw zekker dat uw deze klant wilt verwijderen", "Klant verwijderen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (_CustomerControlle.DelteCustomer(Customer_id))
+                    if (_CategoryController.DeleteCategory(Category_id))
                     {
-                        MessageBox.Show("uw heeft een klant verwijdered");
+                        MessageBox.Show("uw heeft een Category verwijdered");
                     }
                     else
                     {
@@ -79,11 +75,6 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
                     }
                 }
             }
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }
