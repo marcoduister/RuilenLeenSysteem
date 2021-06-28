@@ -67,22 +67,17 @@ namespace RuilenLeenSysteem.BUS
             return created;
         }
 
-        internal bool AddProduct(int Id, string Name, string Description, int Points, int Categorie_id)
+        internal bool AddProduct( string Name, string Description, int Points, int Categorie_id)
         {
             bool created = false;
-            if (!_DbData.ExistProductById(Id))
+            Product AddProduct = new Product()
             {
-                Product AddProduct = new Product()
-                {
-                    Id = Id,
-                    Name = Name,
-                    Description = Description,
-                    Points = Points,
-                    Categorie_id = Categorie_id,
-                };
-                _DbData.AddProduct(AddProduct);
-                created = true;
-            }
+                Name = Name,
+                Description = Description,
+                Points = Points,
+                Categorie_id = Categorie_id,
+            };
+            created = _DbData.AddProduct(AddProduct);
 
             return created;
 

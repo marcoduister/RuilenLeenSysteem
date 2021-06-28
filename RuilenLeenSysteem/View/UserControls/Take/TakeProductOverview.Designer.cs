@@ -63,9 +63,9 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Label1.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(50, 25);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(186, 40);
+            this.Label1.Size = new System.Drawing.Size(227, 40);
             this.Label1.TabIndex = 25;
-            this.Label1.Text = "Innemen";
+            this.Label1.Text = "Aannemen ";
             // 
             // Btn_TakeProduct
             // 
@@ -74,7 +74,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Btn_TakeProduct.Name = "Btn_TakeProduct";
             this.Btn_TakeProduct.Size = new System.Drawing.Size(110, 93);
             this.Btn_TakeProduct.TabIndex = 76;
-            this.Btn_TakeProduct.Text = "Innemen";
+            this.Btn_TakeProduct.Text = "Aannemen ";
             this.Btn_TakeProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_TakeProduct.UseVisualStyleBackColor = true;
             this.Btn_TakeProduct.Click += new System.EventHandler(this.Btn_TakeProduct_Click);

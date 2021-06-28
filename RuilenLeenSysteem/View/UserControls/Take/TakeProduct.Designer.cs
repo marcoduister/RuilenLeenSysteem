@@ -123,7 +123,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(334, 40);
             this.Label1.TabIndex = 64;
-            this.Label1.Text = "Product innemen";
+            this.Label1.Text = "Product aannemen";
             // 
             // Txt_ProductAccessories
             // 

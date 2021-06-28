@@ -15,11 +15,10 @@ namespace RuilenLeenSysteem.View.UserControls.Products
     {
         private ProductController _ProductController;
         private CategoryController _CategoryController;
-        private int _Product_id;
-        public ProductAdd(int Product_id)
+        public ProductAdd()
         {
             InitializeComponent();
-            _Product_id = Product_id;
+           
             _ProductController = new ProductController();
             _CategoryController = new CategoryController();
         }
@@ -35,7 +34,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
 
         private void Btn_ProductAdd_Click(object sender, EventArgs e)
         {
-            if (_ProductController.AddProduct(_Product_id, Txt_ProductName.Text, Txt_ProductDescription.Text, int.Parse(Txt_ProductPoints.Text), (int)Cbx_ProductCategorie.SelectedValue))
+            if (_ProductController.AddProduct(Txt_ProductName.Text, Txt_ProductDescription.Text, int.Parse(Txt_ProductPoints.Text), (int)Cbx_ProductCategorie.SelectedValue))
 
             {
                 MessageBox.Show("Uw heeft zo juist een Product aangemaakt");

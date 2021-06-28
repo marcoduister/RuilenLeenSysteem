@@ -173,7 +173,7 @@ namespace RuilenLeenSysteem.DAL
             }
         }
 
-        public void AddProduct(Product product)
+        public bool AddProduct(Product product)
         {
 
             _Conn = new SqlConnection(ConnectionString);
@@ -193,29 +193,10 @@ namespace RuilenLeenSysteem.DAL
                 }
                 _Conn.Close();
             }
-            catch (SqlException ex) { throw ex; }
-            finally { _Conn.Dispose(); }
+            catch (SqlException ex) { return false;  }
+            finally { _Conn.Dispose();  }
+            return true;
 
-
-            //_Conn = new SqlConnection(ConnectionString);
-            //using (_Conn)
-            //{
-            //    // Idk of deze query et doet        #TODO
-            //    SqlCommand SQLCmd = new SqlCommand($"Insert Into Product values ({product.Name}, {product.Description}, {product.Points}, {product.Categorie_id} WHERE Id = {product.Id})", _Conn);
-            //    _Conn.Open();
-
-            //    try
-            //    {
-            //        SQLCmd.ExecuteNonQuery();
-            //        MessageBox.Show("Add successful");
-            //    }
-            //    catch (SqlException ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-
-            //    _Conn.Close();
-            //}
         }
 
         public void EditProduct(Product product)
