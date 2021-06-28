@@ -53,13 +53,6 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         {
             int Product_id = int.Parse(Dgv_ProductOverview.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-            if (Dgv_ProductOverview.Columns[e.ColumnIndex].Name == "btn_Read")
-            {
-                //this.Controls.Clear();
-                //ProductReadProduct uc = new ProductReadProduct(Product_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
-            }
             if (Dgv_ProductOverview.Columns[e.ColumnIndex].Name == "Btn_Edit")
             {
                 this.Controls.Clear();
@@ -67,7 +60,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
                 uc.Dock = DockStyle.Fill;
                 this.Controls.Add(uc);
             }
-            if (Dgv_ProductOverview.Columns[e.ColumnIndex].Name == "btn_Delete")
+            if (Dgv_ProductOverview.Columns[e.ColumnIndex].Name == "Btn_Delete")
             {
                 DialogResult dialogResult = MessageBox.Show("Weet uw zekker dat uw dit product wilt verwijderen", "Product verwijderen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)

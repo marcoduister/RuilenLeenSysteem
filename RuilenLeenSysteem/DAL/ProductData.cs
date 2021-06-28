@@ -163,7 +163,6 @@ namespace RuilenLeenSysteem.DAL
                 try
                 {
                     SQLCmd.ExecuteNonQuery();
-                    MessageBox.Show("delete successful");
                 }
                 catch (SqlException ex)
                 {
