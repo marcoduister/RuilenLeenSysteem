@@ -14,11 +14,11 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
 {
     public partial class CustomerOverview : UserControl
     {
-        private CustomerController _CustomerControlle;
+        private CustomerController _CustomerController;
         public CustomerOverview()
         {
             InitializeComponent();
-            _CustomerControlle = new CustomerController();
+            _CustomerController = new CustomerController();
         }
 
         private void Btn_CustomerAdd_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
                 DialogResult dialogResult = MessageBox.Show("Weet uw zekker dat uw deze klant wilt verwijderen", "Klant verwijderen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (_CustomerControlle.DeleteCustomer(Customer_id))
+                    if (_CustomerController.DeleteCustomer(Customer_id))
                     {
                         MessageBox.Show("uw heeft een klant verwijdered");
                     }
