@@ -90,7 +90,7 @@ namespace RuilenLeenSysteem.BUS
             return created;
         }
 
-        internal bool DelteCustomer(int Id)
+        internal bool DeleteCustomer(int Id)
         {
             bool Deleted = false;
             if (_DbData.ExistCustomerById(Id))

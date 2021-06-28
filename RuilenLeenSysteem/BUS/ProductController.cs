@@ -29,5 +29,67 @@ namespace RuilenLeenSysteem.BUS
             }
             return Product;
         }
+
+        internal List<Product> GetAllProducts()
+        {
+            return _DbData.GetAllProducts();
+        }
+
+        internal bool DeleteProduct(int Id)
+        {
+            bool Deleted = false;
+            if (_DbData.ExistProductById(Id))
+            {
+                _DbData.DeleteProduct(Id);
+                Deleted = true;
+            }
+
+            return Deleted;
+        }
+
+        internal bool EditProduct(int Id, string Name, string Description, int Points, int Categorie_id)
+        {
+            bool created = false;
+            if (_DbData.ExistProductById(Id))
+            {
+                Product EditProduct = new Product()
+                {
+                    Id = Id,
+                    Name = Name,
+                    Description = Description,
+                    Points = Points,
+                    Categorie_id = Categorie_id,
+                };
+                _DbData.EditProduct(EditProduct);
+                created = true;
+            }
+
+            return created;
+        }
+
+        internal bool AddProduct(int Id, string Name, string Description, int Points, int Categorie_id)
+        {
+            bool created = false;
+            if (!_DbData.ExistProductById(Id))
+            {
+                Product AddProduct = new Product()
+                {
+                    Id = Id,
+                    Name = Name,
+                    Description = Description,
+                    Points = Points,
+                    Categorie_id = Categorie_id,
+                };
+                _DbData.AddProduct(AddProduct);
+                created = true;
+            }
+
+            return created;
+
+        }
+
+
+
+
     }
 }

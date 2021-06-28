@@ -35,11 +35,11 @@ namespace RuilenLeenSysteem.DAL
                         {
                             Id = Int32.Parse(oReader["Id"].ToString()),
                             Name = oReader["Name"].ToString(),
-                            Description = oReader["Desctiption"].ToString(),
-                            Points = Int32.Parse(oReader["p"].ToString()),
+                            Description = oReader["Description"].ToString(),
+                            Points = Int32.Parse(oReader["Points"].ToString()),
                             Status = (Status)Int32.Parse(oReader["Status"].ToString()),
                             Type = (Type)Int32.Parse(oReader["Type"].ToString()),
-                            Categorie_id = Int32.Parse(oReader["Categorie_Id"].ToString()),
+                            Categorie_id = Int32.Parse(oReader["Category_Id"].ToString()),
                             Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString()),
                         };
                         ListOfProducts.Add(TempProduct);
@@ -175,48 +175,71 @@ namespace RuilenLeenSysteem.DAL
 
         public void AddProduct(Product product)
         {
+
             _Conn = new SqlConnection(ConnectionString);
-            using (_Conn)
+            try
             {
-                // Idk of deze query et doet        #TODO
-                SqlCommand SQLCmd = new SqlCommand($"Insert Into Product values ({product.Name}, {product.Description}, {product.Points}, {product.Status}, {product.Type}, {product.Categorie_id}, {product.Customer_Id})", _Conn);
                 _Conn.Open();
 
-                try
+                String SQLString = $"Insert Into Product values " +
+                    $"Name = '{product.Name}', " +
+                    $"Description = '{product.Description}'," +
+                    $"Points = '{product.Points}'," +
+                    $"Category_Id = '{product.Categorie_id}' WHERE Id = {product.Id};";
+
+                using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
                 {
                     SQLCmd.ExecuteNonQuery();
-                    MessageBox.Show("Add successful");
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
                 _Conn.Close();
             }
+            catch (SqlException ex) { throw ex; }
+            finally { _Conn.Dispose(); }
+
+
+            //_Conn = new SqlConnection(ConnectionString);
+            //using (_Conn)
+            //{
+            //    // Idk of deze query et doet        #TODO
+            //    SqlCommand SQLCmd = new SqlCommand($"Insert Into Product values ({product.Name}, {product.Description}, {product.Points}, {product.Categorie_id} WHERE Id = {product.Id})", _Conn);
+            //    _Conn.Open();
+
+            //    try
+            //    {
+            //        SQLCmd.ExecuteNonQuery();
+            //        MessageBox.Show("Add successful");
+            //    }
+            //    catch (SqlException ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+
+            //    _Conn.Close();
+            //}
         }
 
-        public void EdidtProduct(Product product)
+        public void EditProduct(Product product)
         {
             _Conn = new SqlConnection(ConnectionString);
-            using (_Conn)
+            try
             {
-                // Idk of deze query et doet        #TODO
-                SqlCommand SQLCmd = new SqlCommand($"Update Product set ({product.Id}, {product.Name}, {product.Description}, {product.Points}, {product.Status}, {product.Type}, {product.Categorie_id}, {product.Customer_Id})", _Conn);
                 _Conn.Open();
 
-                try
+                String SQLString = $"UPDATE Product SET " +
+                    $"Name = '{product.Name}', " +
+                    $"Description = '{product.Description}'," +
+                    $"Points = '{product.Points}'," +
+                    $"Category_Id = '{product.Categorie_id}' WHERE Id = {product.Id};";
+
+                using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
                 {
                     SQLCmd.ExecuteNonQuery();
-                    MessageBox.Show("Update successful");
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
                 _Conn.Close();
             }
+            catch (SqlException ex) { throw ex; }
+            finally { _Conn.Dispose(); }
+
         }
 
 

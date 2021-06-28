@@ -16,5 +16,10 @@ namespace RuilenLeenSysteem.View.UserControls.Take
         {
             InitializeComponent();
         }
+
+        private void TakeProduct_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

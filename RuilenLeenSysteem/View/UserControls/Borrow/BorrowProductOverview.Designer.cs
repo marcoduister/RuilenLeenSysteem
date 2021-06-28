@@ -33,7 +33,7 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Dgv_BorrowProductOverview = new System.Windows.Forms.DataGridView();
             this.Label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BorrowProduct_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Dgv_BorrowProductOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_BorrowProductOverview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Name,
+            this.BorrowProduct_Name,
             this.Description,
             this.Points,
             this.Status,
@@ -87,12 +87,12 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Id.Visible = false;
             this.Id.Width = 125;
             // 
-            // Name
+            // BorrowProduct_Name
             // 
-            this.Name.HeaderText = "Naam";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
+            this.BorrowProduct_Name.HeaderText = "Naam";
+            this.BorrowProduct_Name.MinimumWidth = 6;
+            this.BorrowProduct_Name.Name = "BorrowProduct_Name";
+            this.BorrowProduct_Name.Width = 125;
             // 
             // Description
             // 
@@ -131,6 +131,7 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
             this.Controls.Add(this.Txt_BorrowProductSearch);
             this.Controls.Add(this.Dgv_BorrowProductOverview);
             this.Controls.Add(this.Label1);
+            this.Name = "BorrowProductOverview";
             this.Size = new System.Drawing.Size(895, 554);
             this.Load += new System.EventHandler(this.BorrowProductOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_BorrowProductOverview)).EndInit();
@@ -145,7 +146,7 @@ namespace RuilenLeenSysteem.View.UserControls.Borrow
         private System.Windows.Forms.DataGridView Dgv_BorrowProductOverview;
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BorrowProduct_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Points;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;

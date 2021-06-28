@@ -35,13 +35,14 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Txt_ProductName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Cbx_ProductPoints = new System.Windows.Forms.ComboBox();
             this.Cbx_ProductCategorie = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Pbx_ProductImage = new System.Windows.Forms.PictureBox();
             this.Btn_ProductPhotoUpload = new System.Windows.Forms.Button();
             this.Btn_ProductAdd = new System.Windows.Forms.Button();
+            this.Btn_Cancel = new System.Windows.Forms.Button();
+            this.Txt_ProductPoints = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,14 +91,6 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.label3.TabIndex = 44;
             this.label3.Text = "Naam:";
             // 
-            // Cbx_ProductPoints
-            // 
-            this.Cbx_ProductPoints.FormattingEnabled = true;
-            this.Cbx_ProductPoints.Location = new System.Drawing.Point(242, 275);
-            this.Cbx_ProductPoints.Name = "Cbx_ProductPoints";
-            this.Cbx_ProductPoints.Size = new System.Drawing.Size(168, 24);
-            this.Cbx_ProductPoints.TabIndex = 48;
-            // 
             // Cbx_ProductCategorie
             // 
             this.Cbx_ProductCategorie.FormattingEnabled = true;
@@ -133,6 +126,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Pbx_ProductImage.Size = new System.Drawing.Size(218, 190);
             this.Pbx_ProductImage.TabIndex = 52;
             this.Pbx_ProductImage.TabStop = false;
+            this.Pbx_ProductImage.Click += new System.EventHandler(this.Pbx_ProductImage_Click);
             // 
             // Btn_ProductPhotoUpload
             // 
@@ -155,18 +149,39 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Btn_ProductAdd.Text = "Toevoegen";
             this.Btn_ProductAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_ProductAdd.UseVisualStyleBackColor = true;
+            this.Btn_ProductAdd.Click += new System.EventHandler(this.Btn_ProductAdd_Click);
+            // 
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.Location = new System.Drawing.Point(599, 426);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(110, 93);
+            this.Btn_Cancel.TabIndex = 55;
+            this.Btn_Cancel.Text = "Annuleren";
+            this.Btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
+            // 
+            // Txt_ProductPoints
+            // 
+            this.Txt_ProductPoints.Location = new System.Drawing.Point(242, 275);
+            this.Txt_ProductPoints.Name = "Txt_ProductPoints";
+            this.Txt_ProductPoints.Size = new System.Drawing.Size(168, 22);
+            this.Txt_ProductPoints.TabIndex = 68;
+            this.Txt_ProductPoints.TextChanged += new System.EventHandler(this.Txt_ProductPoints_TextChanged);
             // 
             // ProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Txt_ProductPoints);
+            this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Btn_ProductAdd);
             this.Controls.Add(this.Btn_ProductPhotoUpload);
             this.Controls.Add(this.Pbx_ProductImage);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Cbx_ProductCategorie);
-            this.Controls.Add(this.Cbx_ProductPoints);
             this.Controls.Add(this.Txt_ProductDescription);
             this.Controls.Add(this.Txt_ProductName);
             this.Controls.Add(this.label2);
@@ -174,6 +189,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Controls.Add(this.Label1);
             this.Name = "ProductAdd";
             this.Size = new System.Drawing.Size(895, 554);
+            this.Load += new System.EventHandler(this.ProductAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_ProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,12 +203,13 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         private System.Windows.Forms.TextBox Txt_ProductName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox Cbx_ProductPoints;
         private System.Windows.Forms.ComboBox Cbx_ProductCategorie;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox Pbx_ProductImage;
         private System.Windows.Forms.Button Btn_ProductPhotoUpload;
         private System.Windows.Forms.Button Btn_ProductAdd;
+        private System.Windows.Forms.Button Btn_Cancel;
+        private System.Windows.Forms.TextBox Txt_ProductPoints;
     }
 }

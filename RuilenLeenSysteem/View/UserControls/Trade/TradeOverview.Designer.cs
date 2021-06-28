@@ -31,13 +31,13 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
         {
             this.Txt_TradeProductSearch = new System.Windows.Forms.TextBox();
             this.Dgv_TradeProductOverview = new System.Windows.Forms.DataGridView();
+            this.Label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrow_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Ruilen = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeProductOverview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
             this.Dgv_TradeProductOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_TradeProductOverview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Name,
+            this.Borrow_Name,
             this.Description,
             this.Points,
             this.Status,
@@ -68,6 +68,16 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
             this.Dgv_TradeProductOverview.TabIndex = 20;
             this.Dgv_TradeProductOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_TradeProductOverview_CellContentClick);
             // 
+            // Label1
+            // 
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Location = new System.Drawing.Point(70, 52);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(135, 40);
+            this.Label1.TabIndex = 19;
+            this.Label1.Text = "Ruilen";
+            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -77,12 +87,12 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
             this.Id.Visible = false;
             this.Id.Width = 125;
             // 
-            // Name
+            // Borrow_Name
             // 
-            this.Name.HeaderText = "Naam";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
+            this.Borrow_Name.HeaderText = "Naam";
+            this.Borrow_Name.MinimumWidth = 6;
+            this.Borrow_Name.Name = "Borrow_Name";
+            this.Borrow_Name.Width = 125;
             // 
             // Description
             // 
@@ -114,16 +124,6 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
             this.btn_Ruilen.UseColumnTextForButtonValue = true;
             this.btn_Ruilen.Width = 125;
             // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(70, 52);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(135, 40);
-            this.Label1.TabIndex = 19;
-            this.Label1.Text = "Ruilen";
-            // 
             // TradeOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -131,6 +131,7 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
             this.Controls.Add(this.Txt_TradeProductSearch);
             this.Controls.Add(this.Dgv_TradeProductOverview);
             this.Controls.Add(this.Label1);
+            this.Name = "TradeOverview";
             this.Size = new System.Drawing.Size(895, 554);
             this.Load += new System.EventHandler(this.TradeOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeProductOverview)).EndInit();
@@ -145,7 +146,7 @@ namespace RuilenLeenSysteem.View.UserControls.Trade
         private System.Windows.Forms.DataGridView Dgv_TradeProductOverview;
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrow_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Points;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
