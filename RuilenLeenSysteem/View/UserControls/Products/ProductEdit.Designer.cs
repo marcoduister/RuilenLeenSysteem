@@ -43,6 +43,8 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Label1 = new System.Windows.Forms.Label();
             this.Txt_ProductPoints = new System.Windows.Forms.TextBox();
             this.Btn_Cancel = new System.Windows.Forms.Button();
+            this.Txt_Customer = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +83,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(88, 339);
+            this.label5.Location = new System.Drawing.Point(88, 353);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 23);
             this.label5.TabIndex = 63;
@@ -91,7 +93,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(114, 282);
+            this.label4.Location = new System.Drawing.Point(114, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 23);
             this.label4.TabIndex = 62;
@@ -100,7 +102,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             // Cbx_ProductCategorie
             // 
             this.Cbx_ProductCategorie.FormattingEnabled = true;
-            this.Cbx_ProductCategorie.Location = new System.Drawing.Point(237, 341);
+            this.Cbx_ProductCategorie.Location = new System.Drawing.Point(237, 355);
             this.Cbx_ProductCategorie.Name = "Cbx_ProductCategorie";
             this.Cbx_ProductCategorie.Size = new System.Drawing.Size(168, 24);
             this.Cbx_ProductCategorie.TabIndex = 61;
@@ -153,7 +155,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             // 
             // Txt_ProductPoints
             // 
-            this.Txt_ProductPoints.Location = new System.Drawing.Point(237, 284);
+            this.Txt_ProductPoints.Location = new System.Drawing.Point(237, 298);
             this.Txt_ProductPoints.Name = "Txt_ProductPoints";
             this.Txt_ProductPoints.Size = new System.Drawing.Size(168, 22);
             this.Txt_ProductPoints.TabIndex = 67;
@@ -169,10 +171,31 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
+            // Txt_Customer
+            // 
+            this.Txt_Customer.Location = new System.Drawing.Point(237, 254);
+            this.Txt_Customer.Name = "Txt_Customer";
+            this.Txt_Customer.ReadOnly = true;
+            this.Txt_Customer.Size = new System.Drawing.Size(168, 22);
+            this.Txt_Customer.TabIndex = 70;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(125, 254);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 23);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "Customer:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // ProductEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Txt_Customer);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Txt_ProductPoints);
             this.Controls.Add(this.Btn_ProductEdit);
@@ -210,5 +233,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.TextBox Txt_ProductPoints;
         private System.Windows.Forms.Button Btn_Cancel;
+        private System.Windows.Forms.TextBox Txt_Customer;
+        private System.Windows.Forms.Label label6;
     }
 }

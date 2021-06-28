@@ -43,6 +43,8 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Btn_ProductAdd = new System.Windows.Forms.Button();
             this.Btn_Cancel = new System.Windows.Forms.Button();
             this.Txt_ProductPoints = new System.Windows.Forms.TextBox();
+            this.Cbx_Customer = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_ProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,12 +170,31 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Txt_ProductPoints.Name = "Txt_ProductPoints";
             this.Txt_ProductPoints.Size = new System.Drawing.Size(168, 22);
             this.Txt_ProductPoints.TabIndex = 68;
-            this.Txt_ProductPoints.TextChanged += new System.EventHandler(this.Txt_ProductPoints_TextChanged);
+            // 
+            // Cbx_Customer
+            // 
+            this.Cbx_Customer.FormattingEnabled = true;
+            this.Cbx_Customer.Location = new System.Drawing.Point(242, 372);
+            this.Cbx_Customer.Name = "Cbx_Customer";
+            this.Cbx_Customer.Size = new System.Drawing.Size(168, 24);
+            this.Cbx_Customer.TabIndex = 74;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(126, 370);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 23);
+            this.label6.TabIndex = 73;
+            this.label6.Text = "Klant:";
             // 
             // ProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Cbx_Customer);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Txt_ProductPoints);
             this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Btn_ProductAdd);
@@ -211,5 +232,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         private System.Windows.Forms.Button Btn_ProductAdd;
         private System.Windows.Forms.Button Btn_Cancel;
         private System.Windows.Forms.TextBox Txt_ProductPoints;
+        private System.Windows.Forms.ComboBox Cbx_Customer;
+        private System.Windows.Forms.Label label6;
     }
 }

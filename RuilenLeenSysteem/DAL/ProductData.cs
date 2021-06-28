@@ -144,6 +144,7 @@ namespace RuilenLeenSysteem.DAL
                         product.Points = Int32.Parse(oReader["points"].ToString());
                         product.Status = (Status)Int32.Parse(oReader["Status"].ToString());
                         product.Type = (Type)Int32.Parse(oReader["Type"].ToString());
+                        product.Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString());
                     }
                     _Conn.Close();
                 }
@@ -181,11 +182,9 @@ namespace RuilenLeenSysteem.DAL
             {
                 _Conn.Open();
 
-                String SQLString = $"Insert Into Product values " +
-                    $"Name = '{product.Name}', " +
-                    $"Description = '{product.Description}'," +
-                    $"Points = '{product.Points}'," +
-                    $"Category_Id = '{product.Categorie_id}' WHERE Id = {product.Id};";
+                String SQLString = $"INSERT INTO [Product]([Name],[Description],[Points]," +
+                    $"[Status],[Type],[Category_Id],[Customer_Id]) VALUES('{product.Name}','{product.Description}'," +
+                    $"{product.Points},{(int)product.Status},{(int)product.Type},{product.Categorie_id},{product.Customer_Id});";
 
                 using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
                 {
@@ -206,11 +205,8 @@ namespace RuilenLeenSysteem.DAL
             {
                 _Conn.Open();
 
-                String SQLString = $"UPDATE Product SET " +
-                    $"Name = '{product.Name}', " +
-                    $"Description = '{product.Description}'," +
-                    $"Points = '{product.Points}'," +
-                    $"Category_Id = '{product.Categorie_id}' WHERE Id = {product.Id};";
+                String SQLString = $"UPDATE [Product] SET [Name] ='{product.Name}',[Description] = '{product.Description}'" +
+                    $",[Points] = {product.Points}, [Category_Id] = {product.Categorie_id} WHERE Id = {product.Id}; ";
 
                 using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
                 {

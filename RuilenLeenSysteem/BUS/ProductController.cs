@@ -11,9 +11,11 @@ namespace RuilenLeenSysteem.BUS
     class ProductController
     {
         private ProductData _DbData;
+        private CustomerData _CustomerDbData;
         public ProductController()
         {
             _DbData = new ProductData();
+            _CustomerDbData = new CustomerData();
         }
         internal List<Product> GetAllProductsByType(Model.Type Type)
         {
@@ -26,6 +28,7 @@ namespace RuilenLeenSysteem.BUS
             if (_DbData.ExistProductById(product_id))
             {
                 Product = _DbData.GetProductById(product_id);
+                Product.Customer = _CustomerDbData.GetCustomersById(Product.Customer_Id);
             }
             return Product;
         }
@@ -67,24 +70,34 @@ namespace RuilenLeenSysteem.BUS
             return created;
         }
 
-        internal bool AddProduct( string Name, string Description, int Points, int Categorie_id)
+        internal bool AddProduct( string Name, string Description, int Points, int Categorie_id, int Customer_id)
         {
-            bool created = false;
-            Product AddProduct = new Product()
+            bool Created = false;
+            if (_CustomerDbData.ExistCustomerById(Customer_id))
             {
-                Name = Name,
-                Description = Description,
-                Points = Points,
-                Categorie_id = Categorie_id,
-            };
-            created = _DbData.AddProduct(AddProduct);
+                Customer Customer = _CustomerDbData.GetCustomersById(Customer_id);
 
-            return created;
+                    Customer.balance += Points;
+                    Product AddProduct = new Product()
+                    {
+                        Name = Name,
+                        Description = Description,
+                        Points = Points,
+                        Status = Status.InStock,
+                        Type = Model.Type.Trade,
+                        Categorie_id = Categorie_id,
+                        Customer_Id = Customer_id
+                    };
+
+                    Created = _DbData.AddProduct(AddProduct);
+                    _CustomerDbData.PointsExchange(Customer_id, Customer.balance);
+                
+            }
+
+            
+
+            return Created;
 
         }
-
-
-
-
     }
 }

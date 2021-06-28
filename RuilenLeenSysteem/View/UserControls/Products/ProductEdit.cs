@@ -32,25 +32,30 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             Product EditProduct = _ProductController.GetProductById(_Product_id);
             Txt_ProductName.Text = EditProduct.Name;
             Txt_ProductDescription.Text = EditProduct.Description;
-            Txt_ProductPoints.Text = EditProduct.Points.ToString(); ;
+            Txt_ProductPoints.Text = EditProduct.Points.ToString();
+            string customerName = EditProduct.Customer.FirstName + " " + EditProduct.Customer.LastName;
+            Txt_Customer.Text = customerName;
             // Cbx_ProductCategorie.Text = EditCustomer.Email;
 
 
-            
+
             List<Model.Categorie> CategorieList = _CategoryController.GetAllCategories();
 
             //this will fill the CustomerDrowDown
-            FillCategorieDropDown(CategorieList);
+            FillCategorieDropDown(CategorieList, EditProduct.Categorie_id);
 
         }
-        private void FillCategorieDropDown(List<Model.Categorie> CategorieList)
+        private void FillCategorieDropDown(List<Model.Categorie> CategorieList,int category_id)
         {
+            
             var Categorie = CategorieList.Select(A => new { Value = A.Id, Text = A.Name }).ToList();
             Categorie.Insert(0, new { Value = 0, Text = "--Select--" });
             Cbx_ProductCategorie.DataSource = Categorie;
 
             Cbx_ProductCategorie.ValueMember = "Value";
             Cbx_ProductCategorie.DisplayMember = "Text";
+            int index = Cbx_ProductCategorie.Items.IndexOf(Categorie.Where(e => e.Value != category_id).First());
+            Cbx_ProductCategorie.SelectedIndex = index;
         }
 
 
