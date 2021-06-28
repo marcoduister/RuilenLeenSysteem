@@ -34,5 +34,10 @@ namespace RuilenLeenSysteem.BUS
         {
             _DbData.AddProduct(product);
         }
+
+        internal void DeleteProduct(int Product_Id)
+        {
+            _DbData.DeleteProduct(Product_Id);
+        }
     }
 }

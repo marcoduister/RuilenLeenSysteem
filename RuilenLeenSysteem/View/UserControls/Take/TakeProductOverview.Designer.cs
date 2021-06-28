@@ -45,10 +45,10 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             // 
             // Txt_TakeProductSearch
             // 
-            this.Txt_TakeProductSearch.Location = new System.Drawing.Point(478, 113);
-            this.Txt_TakeProductSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_TakeProductSearch.Location = new System.Drawing.Point(637, 139);
+            this.Txt_TakeProductSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txt_TakeProductSearch.Name = "Txt_TakeProductSearch";
-            this.Txt_TakeProductSearch.Size = new System.Drawing.Size(149, 20);
+            this.Txt_TakeProductSearch.Size = new System.Drawing.Size(197, 22);
             this.Txt_TakeProductSearch.TabIndex = 27;
             // 
             // Dgv_TakeProductOverview
@@ -63,12 +63,12 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.btn_Read,
             this.btn_Edit,
             this.btn_Delete});
-            this.Dgv_TakeProductOverview.Location = new System.Drawing.Point(43, 136);
-            this.Dgv_TakeProductOverview.Margin = new System.Windows.Forms.Padding(2);
+            this.Dgv_TakeProductOverview.Location = new System.Drawing.Point(57, 167);
+            this.Dgv_TakeProductOverview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dgv_TakeProductOverview.Name = "Dgv_TakeProductOverview";
             this.Dgv_TakeProductOverview.RowHeadersWidth = 51;
             this.Dgv_TakeProductOverview.RowTemplate.Height = 24;
-            this.Dgv_TakeProductOverview.Size = new System.Drawing.Size(584, 290);
+            this.Dgv_TakeProductOverview.Size = new System.Drawing.Size(779, 357);
             this.Dgv_TakeProductOverview.TabIndex = 26;
             this.Dgv_TakeProductOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_TakeProductOverview_CellContentClick);
             // 
@@ -76,20 +76,19 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(38, 20);
-            this.Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label1.Location = new System.Drawing.Point(51, 25);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(152, 32);
+            this.Label1.Size = new System.Drawing.Size(186, 40);
             this.Label1.TabIndex = 25;
             this.Label1.Text = "Innemen";
             // 
             // Btn_TakeProduct
             // 
             this.Btn_TakeProduct.Image = ((System.Drawing.Image)(resources.GetObject("Btn_TakeProduct.Image")));
-            this.Btn_TakeProduct.Location = new System.Drawing.Point(43, 55);
-            this.Btn_TakeProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_TakeProduct.Location = new System.Drawing.Point(57, 68);
+            this.Btn_TakeProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btn_TakeProduct.Name = "Btn_TakeProduct";
-            this.Btn_TakeProduct.Size = new System.Drawing.Size(82, 76);
+            this.Btn_TakeProduct.Size = new System.Drawing.Size(109, 94);
             this.Btn_TakeProduct.TabIndex = 76;
             this.Btn_TakeProduct.Text = "Innemen";
             this.Btn_TakeProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -99,45 +98,59 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             // Id
             // 
             this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.Visible = false;
+            this.Id.Width = 125;
             // 
             // ProductName
             // 
             this.ProductName.HeaderText = "Naam";
+            this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
+            this.ProductName.Width = 125;
             // 
             // Status
             // 
             this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
+            this.Status.Width = 125;
             // 
             // btn_Read
             // 
             this.btn_Read.HeaderText = "Bekijk";
+            this.btn_Read.MinimumWidth = 6;
             this.btn_Read.Name = "btn_Read";
+            this.btn_Read.Visible = false;
+            this.btn_Read.Width = 125;
             // 
             // btn_Edit
             // 
             this.btn_Edit.HeaderText = "Wijzig";
+            this.btn_Edit.MinimumWidth = 6;
             this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Visible = false;
+            this.btn_Edit.Width = 125;
             // 
             // btn_Delete
             // 
             this.btn_Delete.HeaderText = "Verwijder";
+            this.btn_Delete.MinimumWidth = 6;
             this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Width = 125;
             // 
             // TakeProductOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Btn_TakeProduct);
             this.Controls.Add(this.Txt_TakeProductSearch);
             this.Controls.Add(this.Dgv_TakeProductOverview);
             this.Controls.Add(this.Label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TakeProductOverview";
-            this.Size = new System.Drawing.Size(671, 450);
+            this.Size = new System.Drawing.Size(895, 554);
             this.Load += new System.EventHandler(this.TakeProductOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TakeProductOverview)).EndInit();
             this.ResumeLayout(false);

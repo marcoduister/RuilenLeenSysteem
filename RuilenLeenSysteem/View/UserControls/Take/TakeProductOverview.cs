@@ -47,7 +47,19 @@ namespace RuilenLeenSysteem.View.UserControls.Take
 
         private void Dgv_TakeProductOverview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            int Product_id = int.Parse(Dgv_TakeProductOverview.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            if (Dgv_TakeProductOverview.Columns[e.ColumnIndex].Name == "btn_Delete")
+            {
+                DialogResult dialogResult = MessageBox.Show("Weet uw zekker dat uw deze klant wilt verwijderen", "Klant verwijderen", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    _ProductController.DeleteProduct(Product_id);
+                    
+                    MessageBox.Show("uw heeft een product verwijdered");
+                    
+                }
+            }
         }
     }
 }
