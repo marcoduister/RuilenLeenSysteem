@@ -47,6 +47,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             product.Description = Txt_ProductDescription.Text;
             product.Customer_Id = (int)Cbx_ProductCustomer.SelectedValue;
             product.Type = Model.Type.Borrow;
+            product.Status = Model.Status.OnderReview;
 
             ProductController _ProductController = new ProductController();
             _ProductController.AddProduct(product);
