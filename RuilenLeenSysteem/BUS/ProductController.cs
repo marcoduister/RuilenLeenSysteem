@@ -33,9 +33,11 @@ namespace RuilenLeenSysteem.BUS
             return Product;
         }
 
-        internal void AddProduct(Product product)
+        internal bool AddProduct(Product product)
         {
-            _DbData.AddProduct(product);
+            bool Created = false;
+            Created = _DbData.AddProduct(product);
+            return Created;
         }
 
         internal List<Product> GetAllProducts()
@@ -71,9 +73,18 @@ namespace RuilenLeenSysteem.BUS
                 if (status == Status.GivingBack)
                     EditProduct.Status = Status.GivingBack;
                 else if(status == Status.InStock)
+                {
                     EditProduct.Status = Status.InStock;
+                    Product produdct = GetProductById(Id);
+
+                    Customer Customer = _CustomerDbData.GetCustomersById(produdct.Customer_Id);
+                    Customer.balance += Points;
+                    _CustomerDbData.PointsExchange(produdct.Customer_Id, Customer.balance);
+                }
+                    
 
                 _DbData.EditProduct(EditProduct);
+                
                 created = true;
             }
 

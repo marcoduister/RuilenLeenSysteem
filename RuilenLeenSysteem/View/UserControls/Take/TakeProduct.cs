@@ -15,7 +15,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
     public partial class TakeProduct : UserControl
     {
         private CustomerController _CustomerController = new CustomerController();
-
+        ProductController _ProductController = new ProductController();
         public TakeProduct()
         {
             InitializeComponent();
@@ -42,15 +42,40 @@ namespace RuilenLeenSysteem.View.UserControls.Take
 
         private void Btn_TakeProduct_Click(object sender, EventArgs e)
         {
-            Product product = new Product();
-            product.Name = Txt_ProductName.Text;
-            product.Description = Txt_ProductDescription.Text;
-            product.Customer_Id = (int)Cbx_ProductCustomer.SelectedValue;
-            product.Type = Model.Type.Borrow;
-            product.Status = Model.Status.OnderReview;
+            if ((int)Cbx_ProductCustomer.SelectedValue != 0)
+            {
+                Product product = new Product();
+                product.Name = Txt_ProductName.Text;
+                product.Description = Txt_ProductDescription.Text;
+                product.Customer_Id = (int)Cbx_ProductCustomer.SelectedValue;
+                product.Type = Model.Type.Borrow;
+                product.Status = Model.Status.OnderReview;
 
-            ProductController _ProductController = new ProductController();
-            _ProductController.AddProduct(product);
+
+
+                if (_ProductController.AddProduct(product))
+                {
+                    MessageBox.Show("Uw heeft zo juist een Product aangenomen");
+                    Btn_Cancel_Click(null, null);
+
+                }
+                else
+                {
+                    MessageBox.Show("Er is iets fout gedaan probeer het later opnieuw!! ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een klant!! ");
+            }
+        }
+
+        private void Btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            TakeProductOverview Page = new TakeProductOverview();
+            Page.Dock = DockStyle.Fill;
+            this.Controls.Add(Page);
         }
     }
 }

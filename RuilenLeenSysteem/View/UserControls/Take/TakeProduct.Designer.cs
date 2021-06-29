@@ -42,6 +42,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Txt_ProductAccessories = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Btn_TakeProduct = new System.Windows.Forms.Button();
+            this.Btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -160,10 +161,22 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Btn_TakeProduct.UseVisualStyleBackColor = true;
             this.Btn_TakeProduct.Click += new System.EventHandler(this.Btn_TakeProduct_Click);
             // 
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.Location = new System.Drawing.Point(237, 441);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(110, 93);
+            this.Btn_Cancel.TabIndex = 78;
+            this.Btn_Cancel.Text = "Annuleren";
+            this.Btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
+            // 
             // TakeProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Btn_TakeProduct);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Txt_ProductAccessories);
@@ -199,5 +212,6 @@ namespace RuilenLeenSysteem.View.UserControls.Take
         private System.Windows.Forms.TextBox Txt_ProductAccessories;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Btn_TakeProduct;
+        private System.Windows.Forms.Button Btn_Cancel;
     }
 }

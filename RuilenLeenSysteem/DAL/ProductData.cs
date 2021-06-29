@@ -180,10 +180,19 @@ namespace RuilenLeenSysteem.DAL
             try
             {
                 _Conn.Open();
-
-                String SQLString = $"INSERT INTO [Product]([Name],[Description],[Points]," +
+                string SQLString = string.Empty;
+                if (product.Categorie_id == 0)
+                {
+                    SQLString = $"INSERT INTO [Product]([Name],[Description],[Points]," +
+                    $"[Status],[Type],[Customer_Id]) VALUES('{product.Name}','{product.Description}'," +
+                    $"{product.Points},{(int)product.Status},{(int)product.Type},{product.Customer_Id});";
+                }
+                else
+                {
+                    SQLString = $"INSERT INTO [Product]([Name],[Description],[Points]," +
                     $"[Status],[Type],[Category_Id],[Customer_Id]) VALUES('{product.Name}','{product.Description}'," +
                     $"{product.Points},{(int)product.Status},{(int)product.Type},{product.Categorie_id},{product.Customer_Id});";
+                }
 
                 using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
                 {
@@ -191,7 +200,9 @@ namespace RuilenLeenSysteem.DAL
                 }
                 _Conn.Close();
             }
-            catch (SqlException ex) { return false;  }
+            catch (SqlException ex) 
+            { 
+                return false;  }
             finally { _Conn.Dispose();  }
             return true;
 
