@@ -39,9 +39,17 @@ namespace RuilenLeenSysteem.DAL
                             Points = Int32.Parse(oReader["Points"].ToString()),
                             Status = (Status)Int32.Parse(oReader["Status"].ToString()),
                             Type = (Type)Int32.Parse(oReader["Type"].ToString()),
-                            Categorie_id = Int32.Parse(oReader["Category_Id"].ToString()),
-                            Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString()),
+                            
                         };
+                        if ( oReader["Category_Id"].ToString() != "")
+                        {
+                            TempProduct.Categorie_id = Int32.Parse(oReader["Category_Id"].ToString());
+                            
+                        }
+                        if (oReader["Customer_Id"].ToString() != "")
+                        {
+                            TempProduct.Customer_Id = Int32.Parse(oReader["Customer_Id"].ToString());
+                        }
                         ListOfProducts.Add(TempProduct);
                     }
                     _Conn.Close();
