@@ -1,4 +1,5 @@
 ﻿using RuilenLeenSysteem.BUS;
+using RuilenLeenSysteem.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         private void ProductAdd_Load(object sender, EventArgs e)
         {
 
-            List<Model.Categorie> CategorieList = _CategoryController.GetAllCategories();
+            List<Category> CategorieList = _CategoryController.GetAllCategories();
             List<Model.Customer> CustemerList = _CustomerController.GetAllCustomers();
 
             //this will fill the CustomerDrowDown
@@ -67,11 +68,11 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         }
 
 
-        private void FillCategorieDropDown(List<Model.Categorie> CategorieList)
+        private void FillCategorieDropDown(List<Category> CategoryList)
         {
-            var Categorie = CategorieList.Select(A => new { Value = A.Id, Text = A.Name }).ToList();
-            Categorie.Insert(0, new { Value = 0, Text = "--Select--" });
-            Cbx_ProductCategorie.DataSource = Categorie;
+            var Category = CategoryList.Select(A => new { Value = A.Id, Text = A.Name }).ToList();
+            Category.Insert(0, new { Value = 0, Text = "--Select--" });
+            Cbx_ProductCategorie.DataSource = Category;
 
             Cbx_ProductCategorie.ValueMember = "Value";
             Cbx_ProductCategorie.DisplayMember = "Text";

@@ -58,7 +58,7 @@
     <Compile Include="DAL\ProductData.cs" />
     <Compile Include="DAL\UserData.cs" />
     <Compile Include="Model\BorrowOrder.cs" />
-    <Compile Include="Model\Categorie.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Enums.cs" />
     <Compile Include="Model\User.cs" />
@@ -97,11 +97,11 @@
     <Compile Include="View\UserControls\Categorie\CategorieAdd.Designer.cs">
       <DependentUpon>CategorieAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\Categorie\CategorieChange.cs">
+    <Compile Include="View\UserControls\Categorie\CategorieEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControls\Categorie\CategorieChange.Designer.cs">
-      <DependentUpon>CategorieChange.cs</DependentUpon>
+    <Compile Include="View\UserControls\Categorie\CategorieEdit.Designer.cs">
+      <DependentUpon>CategorieEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Categorie\CategorieOverview.cs">
       <SubType>UserControl</SubType>
@@ -211,8 +211,8 @@
     <EmbeddedResource Include="View\UserControls\Categorie\CategorieAdd.resx">
       <DependentUpon>CategorieAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\Categorie\CategorieChange.resx">
-      <DependentUpon>CategorieChange.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\Categorie\CategorieEdit.resx">
+      <DependentUpon>CategorieEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Categorie\CategorieOverview.resx">
       <DependentUpon>CategorieOverview.cs</DependentUpon>

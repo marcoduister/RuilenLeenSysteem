@@ -25,5 +25,4 @@ namespace RuilenLeenSysteem.Model
         IT_Employee,
         Admin
     }
-    
 }

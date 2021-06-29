@@ -1,7 +1,7 @@
 ﻿
 namespace RuilenLeenSysteem.View.UserControls.Categorie
 {
-    partial class CategorieChange
+    partial class CategorieEdit
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,13 +29,14 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategorieChange));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategorieEdit));
             this.Txt_CategorieDescription = new System.Windows.Forms.TextBox();
             this.Txt_CategorieName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Lbl_Customer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_CategorieChange = new System.Windows.Forms.Button();
+            this.Btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Txt_CategorieDescription
@@ -69,9 +70,9 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Lbl_Customer.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Customer.Location = new System.Drawing.Point(99, 51);
             this.Lbl_Customer.Name = "Lbl_Customer";
-            this.Lbl_Customer.Size = new System.Drawing.Size(195, 40);
+            this.Lbl_Customer.Size = new System.Drawing.Size(362, 40);
             this.Lbl_Customer.TabIndex = 40;
-            this.Lbl_Customer.Text = "Categorie";
+            this.Lbl_Customer.Text = "Categorie wijzigen";
             // 
             // label1
             // 
@@ -93,19 +94,33 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Btn_CategorieChange.Text = "Wijzigen";
             this.Btn_CategorieChange.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_CategorieChange.UseVisualStyleBackColor = true;
+            this.Btn_CategorieChange.Click += new System.EventHandler(this.Btn_CategorieChange_Click);
             // 
-            // CategorieChange
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.Location = new System.Drawing.Point(275, 381);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(110, 93);
+            this.Btn_Cancel.TabIndex = 44;
+            this.Btn_Cancel.Text = "Annuleren";
+            this.Btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
+            // 
+            // CategorieEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Txt_CategorieDescription);
             this.Controls.Add(this.Txt_CategorieName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Lbl_Customer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_CategorieChange);
-            this.Name = "CategorieChange";
+            this.Name = "CategorieEdit";
             this.Size = new System.Drawing.Size(895, 554);
+            this.Load += new System.EventHandler(this.CategorieEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +134,6 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
         private System.Windows.Forms.Label Lbl_Customer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Btn_CategorieChange;
+        private System.Windows.Forms.Button Btn_Cancel;
     }
 }
