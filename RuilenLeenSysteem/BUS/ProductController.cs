@@ -100,5 +100,10 @@ namespace RuilenLeenSysteem.BUS
             }
             return Created;
         }
+
+        internal void UpdateProduct(Product product)
+        {
+            _DbData.EdidtProduct(product);
+        }
     }
 }
