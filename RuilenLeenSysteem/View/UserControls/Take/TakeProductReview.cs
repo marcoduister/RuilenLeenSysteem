@@ -40,6 +40,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             _CurentProduct.Points = Int32.Parse(Txt_ProductWorth.Text);
             _CurentProduct.Status = Model.Status.InStock;
             _ProductController.UpdateProduct(_CurentProduct);
+
         }
 
         private void Btn_ProductNotGood_Click_1(object sender, EventArgs e)

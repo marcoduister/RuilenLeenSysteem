@@ -35,20 +35,32 @@ namespace RuilenLeenSysteem.View.UserControls.Take
 
             foreach (var Product in ProductList)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(Dgv_TakeProductOverview);
-                row.Cells[0].Value = Product.Id;
-                row.Cells[1].Value = Product.Name;
-                row.Cells[2].Value = Product.Status;
+                if (Product.Status == Model.Status.OnderReview || Product.Status == Model.Status.GivingBack)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(Dgv_TakeProductOverview);
+                    row.Cells[0].Value = Product.Id;
+                    row.Cells[1].Value = Product.Name;
+                    row.Cells[2].Value = Product.Status;
+                    if (Product.Status != Model.Status.GivingBack)
+                    {
+                        DataGridViewButtonCell Btn_Review = new DataGridViewButtonCell() { Value = "Review" };
+                        row.Cells[3] = Btn_Review;
+                    }
+                    if (Product.Status == Model.Status.GivingBack)
+                    {
+                        DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Verwijderen" };
+                        row.Cells[4] = btn_Delete;
+                    }
 
-                Dgv_TakeProductOverview.Rows.Add(row);
+                    Dgv_TakeProductOverview.Rows.Add(row);
+                }
             }
         }
 
         private void Dgv_TakeProductOverview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int Product_id = int.Parse(Dgv_TakeProductOverview.Rows[e.RowIndex].Cells[0].Value.ToString());
-
             if (Dgv_TakeProductOverview.Columns[e.ColumnIndex].Name == "btn_Delete")
             {
                 DialogResult dialogResult = MessageBox.Show("Weet uw zekker dat uw deze klant wilt verwijderen", "Klant verwijderen", MessageBoxButtons.YesNo);

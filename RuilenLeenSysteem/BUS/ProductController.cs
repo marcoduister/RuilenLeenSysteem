@@ -68,6 +68,10 @@ namespace RuilenLeenSysteem.BUS
                     Points = Points,
                     Categorie_id = Categorie_id,
                 };
+                if (true)
+                {
+
+                }
                 _DbData.EditProduct(EditProduct);
                 created = true;
             }
@@ -103,7 +107,7 @@ namespace RuilenLeenSysteem.BUS
 
         internal void UpdateProduct(Product product)
         {
-            _DbData.EdidtProduct(product);
+            _DbData.EditProduct(product);
         }
     }
 }
