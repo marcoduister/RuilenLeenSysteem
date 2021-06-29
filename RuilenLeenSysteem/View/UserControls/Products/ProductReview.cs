@@ -16,10 +16,5 @@ namespace RuilenLeenSysteem.View.UserControls.Products
         {
             InitializeComponent();
         }
-
-        private void ProductReview_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

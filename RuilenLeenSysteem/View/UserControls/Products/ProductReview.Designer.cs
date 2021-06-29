@@ -187,7 +187,6 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             this.Controls.Add(this.Label1);
             this.Name = "ProductReview";
             this.Size = new System.Drawing.Size(895, 554);
-            this.Load += new System.EventHandler(this.ProductReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_ProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -20,11 +20,6 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             InitializeComponent();
         }
 
-        private void TakeProduct_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_TakeProduct_Click(object sender, EventArgs e)
         {
             Product product = new Product();

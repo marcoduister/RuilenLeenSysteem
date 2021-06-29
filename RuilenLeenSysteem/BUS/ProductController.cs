@@ -38,22 +38,17 @@ namespace RuilenLeenSysteem.BUS
             _DbData.AddProduct(product);
         }
 
-        internal void DeleteProduct(int Product_Id)
-        {
-            _DbData.DeleteProduct(Product_Id);
-        }
-
         internal List<Product> GetAllProducts()
         {
             return _DbData.GetAllProducts();
         }
 
-        internal bool DeleteProduct(int Id)
+        internal bool DeleteProduct(int Product_Id)
         {
             bool Deleted = false;
-            if (_DbData.ExistProductById(Id))
+            if (_DbData.ExistProductById(Product_Id))
             {
-                _DbData.DeleteProduct(Id);
+                _DbData.DeleteProduct(Product_Id);
                 Deleted = true;
             }
 
@@ -103,11 +98,7 @@ namespace RuilenLeenSysteem.BUS
                     _CustomerDbData.PointsExchange(Customer_id, Customer.balance);
                 
             }
-
-            
-
             return Created;
-
         }
     }
 }
