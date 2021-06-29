@@ -10,15 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RuilenLeenSysteem.View.UserControls.Products
+namespace RuilenLeenSysteem.View.UserControls.Take
 {
-    public partial class ProductReview : UserControl
+    public partial class TakeProductReview : UserControl
     {
         private ProductController _ProductController;
         private int _Product_id;
         private Product _CurentProduct;
 
-        public ProductReview(int Product_id )
+        public TakeProductReview(int Product_id)
         {
             InitializeComponent();
             _Product_id = Product_id;
@@ -33,7 +33,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             Txt_ProductWorth.Text = _CurentProduct.Points.ToString();
         }
 
-        private void Btn_ProductGood_Click(object sender, EventArgs e)
+        private void Btn_ProductGood_Click_1(object sender, EventArgs e)
         {
             _CurentProduct.Name = Txt_ProductName.Text;
             _CurentProduct.Description = Txt_ProductDescription.Text;
@@ -42,7 +42,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
             _ProductController.UpdateProduct(_CurentProduct);
         }
 
-        private void Btn_ProductNotGood_Click(object sender, EventArgs e)
+        private void Btn_ProductNotGood_Click_1(object sender, EventArgs e)
         {
             _CurentProduct.Name = Txt_ProductName.Text;
             _CurentProduct.Description = Txt_ProductDescription.Text;

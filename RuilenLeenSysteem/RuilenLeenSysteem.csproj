@@ -157,12 +157,6 @@
     <Compile Include="View\UserControls\Products\ProductOverview.Designer.cs">
       <DependentUpon>ProductOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\Take\TakeProductReview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\UserControls\Take\TakeProductReview.Designer.cs">
-      <DependentUpon>TakeProductReview.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\UserControls\Take\TakeProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,6 +168,12 @@
     </Compile>
     <Compile Include="View\UserControls\Take\TakeProductOverview.Designer.cs">
       <DependentUpon>TakeProductOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Take\TakeProductReview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Take\TakeProductReview.Designer.cs">
+      <DependentUpon>TakeProductReview.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Trade\TradeOverview.cs">
       <SubType>UserControl</SubType>
@@ -241,14 +241,14 @@
     <EmbeddedResource Include="View\UserControls\Products\ProductOverview.resx">
       <DependentUpon>ProductOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\Take\TakeProductReview.resx">
-      <DependentUpon>TakeProductReview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Take\TakeProduct.resx">
       <DependentUpon>TakeProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Take\TakeProductOverview.resx">
       <DependentUpon>TakeProductOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Take\TakeProductReview.resx">
+      <DependentUpon>TakeProductReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Trade\TradeOverview.resx">
       <DependentUpon>TradeOverview.cs</DependentUpon>

@@ -60,10 +60,10 @@ namespace RuilenLeenSysteem.View.UserControls.Take
                     
                 }
             }
-            if (Dgv_TakeProductOverview.Columns[e.ColumnIndex].Name == "btn_Review")
+            if (Dgv_TakeProductOverview.Columns[e.ColumnIndex].Name == "Btn_Review")
             {
                 this.Controls.Clear();
-                TakeProductReview Page = new TakeProduct();
+                TakeProductReview Page = new TakeProductReview(Product_id);
                 Page.Dock = DockStyle.Fill;
                 this.Controls.Add(Page);
             }
