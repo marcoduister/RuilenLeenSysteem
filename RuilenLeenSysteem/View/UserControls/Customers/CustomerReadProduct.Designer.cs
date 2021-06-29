@@ -41,9 +41,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Txt_CustomerEmail = new System.Windows.Forms.TextBox();
             this.Txt_CustomerLastName = new System.Windows.Forms.TextBox();
             this.Dgv_TradeView = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dgv_BorrowView = new System.Windows.Forms.DataGridView();
             this.Product_borrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Points_borrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +50,9 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.label7 = new System.Windows.Forms.Label();
             this.Txt_balance = new System.Windows.Forms.TextBox();
             this.Balance = new System.Windows.Forms.Label();
+            this.BrProduct_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_BorrowView)).BeginInit();
             this.SuspendLayout();
@@ -161,7 +161,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             // 
             this.Dgv_TradeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_TradeView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.BrProduct_Name,
             this.Points,
             this.OrderDate});
             this.Dgv_TradeView.Location = new System.Drawing.Point(33, 270);
@@ -170,33 +170,6 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Dgv_TradeView.RowTemplate.Height = 24;
             this.Dgv_TradeView.Size = new System.Drawing.Size(371, 245);
             this.Dgv_TradeView.TabIndex = 19;
-            // 
-            // Name
-            // 
-            this.Name.Frozen = true;
-            this.Name.HeaderText = "Product";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            this.Name.Width = 125;
-            // 
-            // Points
-            // 
-            this.Points.Frozen = true;
-            this.Points.HeaderText = "punten";
-            this.Points.MinimumWidth = 6;
-            this.Points.Name = "Points";
-            this.Points.ReadOnly = true;
-            this.Points.Width = 125;
-            // 
-            // OrderDate
-            // 
-            this.OrderDate.Frozen = true;
-            this.OrderDate.HeaderText = "BestelDatum";
-            this.OrderDate.MinimumWidth = 6;
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
-            this.OrderDate.Width = 125;
             // 
             // Dgv_BorrowView
             // 
@@ -287,6 +260,33 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Balance.TabIndex = 23;
             this.Balance.Text = "Balance:";
             // 
+            // BrProduct_Name
+            // 
+            this.BrProduct_Name.Frozen = true;
+            this.BrProduct_Name.HeaderText = "Product";
+            this.BrProduct_Name.MinimumWidth = 6;
+            this.BrProduct_Name.Name = "BrProduct_Name";
+            this.BrProduct_Name.ReadOnly = true;
+            this.BrProduct_Name.Width = 125;
+            // 
+            // Points
+            // 
+            this.Points.Frozen = true;
+            this.Points.HeaderText = "punten";
+            this.Points.MinimumWidth = 6;
+            this.Points.Name = "Points";
+            this.Points.ReadOnly = true;
+            this.Points.Width = 125;
+            // 
+            // OrderDate
+            // 
+            this.OrderDate.Frozen = true;
+            this.OrderDate.HeaderText = "BestelDatum";
+            this.OrderDate.MinimumWidth = 6;
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
+            this.OrderDate.Width = 125;
+            // 
             // CustomerReadProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,6 +308,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Lbl_Customer);
+            this.Name = "CustomerReadProduct";
             this.Size = new System.Drawing.Size(895, 554);
             this.Load += new System.EventHandler(this.CustomerReadProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_TradeView)).EndInit();
@@ -334,14 +335,14 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
         private System.Windows.Forms.DataGridView Dgv_BorrowView;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Points;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_borrow;
         private System.Windows.Forms.DataGridViewTextBoxColumn Points_borrow;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn eindBorrow;
         private System.Windows.Forms.TextBox Txt_balance;
         private System.Windows.Forms.Label Balance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BrProduct_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Points;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
     }
 }

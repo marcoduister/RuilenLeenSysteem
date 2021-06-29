@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RuilenLeenSysteem.Model
 {
-    public class Categorie
+    public class Category
     {
         // Property / Attributes
-        protected int Id { get; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime Created_date { get; set; }

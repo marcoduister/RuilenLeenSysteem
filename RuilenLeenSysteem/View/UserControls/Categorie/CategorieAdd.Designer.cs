@@ -36,6 +36,7 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.label2 = new System.Windows.Forms.Label();
             this.Txt_CategorieName = new System.Windows.Forms.TextBox();
             this.Txt_CategorieDescription = new System.Windows.Forms.TextBox();
+            this.Btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_CategorieAdd
@@ -48,6 +49,7 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Btn_CategorieAdd.Text = "Toevoegen";
             this.Btn_CategorieAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_CategorieAdd.UseVisualStyleBackColor = true;
+            this.Btn_CategorieAdd.Click += new System.EventHandler(this.Btn_CategorieAdd_Click);
             // 
             // label1
             // 
@@ -94,10 +96,22 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
             this.Txt_CategorieDescription.Size = new System.Drawing.Size(168, 101);
             this.Txt_CategorieDescription.TabIndex = 37;
             // 
+            // Btn_Cancel
+            // 
+            this.Btn_Cancel.Location = new System.Drawing.Point(241, 390);
+            this.Btn_Cancel.Name = "Btn_Cancel";
+            this.Btn_Cancel.Size = new System.Drawing.Size(110, 93);
+            this.Btn_Cancel.TabIndex = 38;
+            this.Btn_Cancel.Text = "Annuleren";
+            this.Btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
+            // 
             // CategorieAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Txt_CategorieDescription);
             this.Controls.Add(this.Txt_CategorieName);
             this.Controls.Add(this.label2);
@@ -119,5 +133,6 @@ namespace RuilenLeenSysteem.View.UserControls.Categorie
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Txt_CategorieName;
         private System.Windows.Forms.TextBox Txt_CategorieDescription;
+        private System.Windows.Forms.Button Btn_Cancel;
     }
 }

@@ -123,7 +123,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Label1.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(51, 25);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(186, 40);
+            this.Label1.Size = new System.Drawing.Size(227, 40);
             this.Label1.TabIndex = 25;
             this.Label1.Text = "Aannemen ";
             // 

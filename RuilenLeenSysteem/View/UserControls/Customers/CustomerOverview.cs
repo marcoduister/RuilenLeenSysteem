@@ -71,7 +71,7 @@ namespace RuilenLeenSysteem.View.UserControls.Customers
                 DialogResult dialogResult = MessageBox.Show("Weet uw zekker dat uw deze klant wilt verwijderen", "Klant verwijderen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (_CustomerController.DelteCustomer(Customer_id))
+                    if (_CustomerController.DeleteCustomer(Customer_id))
                     {
                         MessageBox.Show("uw heeft een klant verwijdered");
                     }

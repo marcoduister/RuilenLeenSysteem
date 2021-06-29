@@ -21,7 +21,7 @@ namespace RuilenLeenSysteem.Model
         public int Customer_Id { get; set; }
         public Customer Customer { get; set; }
         public int Categorie_id { get; set; }
-        public Categorie Categorie { get; set; }
+        public Category Category { get; set; }
 
     }
 }
