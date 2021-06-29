@@ -63,7 +63,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Btn_ProductGood.Text = "Goed";
             this.Btn_ProductGood.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_ProductGood.UseVisualStyleBackColor = true;
-            this.Btn_ProductGood.Click += new System.EventHandler(this.Btn_ProductGood_Click_1);
+            this.Btn_ProductGood.Click += new System.EventHandler(this.Btn_ProductGood_Click);
             // 
             // Btn_ProductNotGood
             // 
@@ -76,7 +76,7 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             this.Btn_ProductNotGood.Text = "Niet goed";
             this.Btn_ProductNotGood.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Btn_ProductNotGood.UseVisualStyleBackColor = true;
-            this.Btn_ProductNotGood.Click += new System.EventHandler(this.Btn_ProductNotGood_Click_1);
+            this.Btn_ProductNotGood.Click += new System.EventHandler(this.Btn_ProductNotGood_Click);
             // 
             // Btn_ProductPhotoUpload
             // 

@@ -68,7 +68,7 @@ namespace RuilenLeenSysteem.View.UserControls.Products
 
         private void Btn_ProductEdit_Click(object sender, EventArgs e)
         {
-            if (_ProductController.EditProduct(_Product_id, Txt_ProductName.Text, Txt_ProductDescription.Text, int.Parse(Txt_ProductPoints.Text), (int)Cbx_ProductCategorie.SelectedValue))
+            if (_ProductController.EditProduct(_Product_id, Txt_ProductName.Text, Txt_ProductDescription.Text, int.Parse(Txt_ProductPoints.Text), (int)Cbx_ProductCategorie.SelectedValue,Status.Sold))
             {
                 MessageBox.Show("Uw heeft zo juist een Product bewerkt");
                 Btn_Cancel_Click(null, null);

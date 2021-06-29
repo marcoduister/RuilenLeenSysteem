@@ -203,9 +203,18 @@ namespace RuilenLeenSysteem.DAL
             try
             {
                 _Conn.Open();
-
-                String SQLString = $"UPDATE [Product] SET [Name] ='{product.Name}',[Description] = '{product.Description}'" +
+                String SQLString = string.Empty;
+                if (product.Categorie_id != 0)
+                {
+                    SQLString = $"UPDATE [Product] SET [Name] ='{product.Name}',[Description] = '{product.Description}'" +
                     $",[Points] = {product.Points}, [Category_Id] = {product.Categorie_id} WHERE Id = {product.Id}; ";
+                }
+                else
+                {
+                    SQLString = $"UPDATE [Product] SET [Name] ='{product.Name}',[Description] = '{product.Description}'" +
+                    $",[Points] = {product.Points}, [Status] = {(int)product.Status} WHERE Id = {product.Id}; ";
+                }
+
 
                 using (SqlCommand SQLCmd = new SqlCommand(SQLString, _Conn))
                 {

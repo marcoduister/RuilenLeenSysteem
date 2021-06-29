@@ -33,23 +33,40 @@ namespace RuilenLeenSysteem.View.UserControls.Take
             Txt_ProductWorth.Text = _CurentProduct.Points.ToString();
         }
 
-        private void Btn_ProductGood_Click_1(object sender, EventArgs e)
+        private void Btn_ProductGood_Click(object sender, EventArgs e)
         {
-            _CurentProduct.Name = Txt_ProductName.Text;
-            _CurentProduct.Description = Txt_ProductDescription.Text;
-            _CurentProduct.Points = Int32.Parse(Txt_ProductWorth.Text);
-            _CurentProduct.Status = Model.Status.InStock;
-            _ProductController.UpdateProduct(_CurentProduct);
+            if (_ProductController.EditProduct(_Product_id, Txt_ProductName.Text, Txt_ProductDescription.Text, Int32.Parse(Txt_ProductWorth.Text), 0, Model.Status.InStock))
+            {
+                MessageBox.Show("Uw heeft zo juist een Product gereviewd");
+                ReturnBack();
+            }
+            else
+            {
+                MessageBox.Show("Er is iets fout gedaan probeer het later opnieuw!! ");
+            }
 
         }
 
-        private void Btn_ProductNotGood_Click_1(object sender, EventArgs e)
+        private void Btn_ProductNotGood_Click(object sender, EventArgs e)
         {
-            _CurentProduct.Name = Txt_ProductName.Text;
-            _CurentProduct.Description = Txt_ProductDescription.Text;
-            _CurentProduct.Points = Int32.Parse(Txt_ProductWorth.Text);
-            _CurentProduct.Status = Model.Status.GivingBack;
-            _ProductController.UpdateProduct(_CurentProduct);
+            
+            if (_ProductController.EditProduct(_Product_id, Txt_ProductName.Text,Txt_ProductDescription.Text, Int32.Parse(Txt_ProductWorth.Text),0, Model.Status.GivingBack))
+            {
+                MessageBox.Show("Uw heeft zo juist een Product gereviewd");
+                ReturnBack();
+            }
+            else
+            {
+                MessageBox.Show("Er is iets fout gedaan probeer het later opnieuw!! ");
+            }
+        }
+
+        private void ReturnBack()
+        {
+            this.Controls.Clear();
+            TakeProductOverview Page = new TakeProductOverview();
+            Page.Dock = DockStyle.Fill;
+            this.Controls.Add(Page);
         }
     }
 }

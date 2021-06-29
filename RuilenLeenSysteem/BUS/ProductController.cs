@@ -55,7 +55,7 @@ namespace RuilenLeenSysteem.BUS
             return Deleted;
         }
 
-        internal bool EditProduct(int Id, string Name, string Description, int Points, int Categorie_id)
+        internal bool EditProduct(int Id, string Name, string Description, int Points, int Categorie_id, Status status)
         {
             bool created = false;
             if (_DbData.ExistProductById(Id))
@@ -68,10 +68,11 @@ namespace RuilenLeenSysteem.BUS
                     Points = Points,
                     Categorie_id = Categorie_id,
                 };
-                if (true)
-                {
+                if (status == Status.GivingBack)
+                    EditProduct.Status = Status.GivingBack;
+                else if(status == Status.InStock)
+                    EditProduct.Status = Status.InStock;
 
-                }
                 _DbData.EditProduct(EditProduct);
                 created = true;
             }
@@ -103,11 +104,6 @@ namespace RuilenLeenSysteem.BUS
                 
             }
             return Created;
-        }
-
-        internal void UpdateProduct(Product product)
-        {
-            _DbData.EditProduct(product);
         }
     }
 }
